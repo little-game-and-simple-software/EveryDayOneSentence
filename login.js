@@ -1,0 +1,20 @@
+$(document).ready(function()
+{
+  //alert("你好Jquery")
+  $("#account").click(function()
+  {
+
+  })
+  $("#login").click(function()
+  {
+    alert("登陆中，请稍后")
+  })
+  $("#showPwd").click(function()
+  {
+    $("#pwd").attr('type','text')
+  })
+  $("#hidePwd").click(function()
+  {
+    $("#pwd").attr('type','password')
+  })
+})
