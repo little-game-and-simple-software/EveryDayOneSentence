@@ -15,7 +15,7 @@ $(document).ready(function()
     else
     {
       alert("正在向php发送数据...")
-      $.post("register.php",function(data,status)
+      $.post("register.php",{account:value1},function(data,status)
       {
         document.write("返回数据测试"+data)
         document.write("状态"+status)

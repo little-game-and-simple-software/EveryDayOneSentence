@@ -26,10 +26,11 @@ $result=mysqli_query($conn,$seletSql);
 $query_result=mysqli_fetch_all($result);
 //var_dump($query_result);
 echo $query_result[0][0];
+echo "<br/>"."得到的post数据".$_POST["account"];
 if($query_result[0][0]==$_POST["account"])
 {
-    echo "错误，此账号名已存在";
-    echo "点击此链接返回";
+    echo "<br/>错误，此账号名已存在";
+    echo "<br/>点击此链接返回";
     echo "<a href='index.html'>返回主页</a>";
 }
 }
