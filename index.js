@@ -3,6 +3,16 @@ $(document).ready(function()
   $("#getRecommandJuzi").click(function()
   {
     alert("敬请期待")
+    window.open("showTodaySentence.html")
   })
-  
+  $("#qiandao").click(function()
+  {
+    alert("请先登录")
+    window.open("qiandao.html")
+  })
+  $("#user").click(function()
+{
+  alert("请先登录")
+  window.open("userSpace.html")
+})
 })
