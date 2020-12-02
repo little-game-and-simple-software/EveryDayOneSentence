@@ -1,23 +1,76 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="index.js"></script>
 <meta charset="utf-8">
 <title>每日一句，记录你的美好生活</title>
+<style>
+a{ text-decoration:none }
+#imgage{width:990px; height:60px; margin:0 auto; background:#FA6;} 
+.button-toysworld{
+  position: relative;
+  background: orangered;
+  border: none;
+  color: white;
+  padding: 15px 24px;
+  font-size: 1.4rem;
+  outline: none;
+  box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+}
+.button-toysworld::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: -6px;
+  border: 6px solid transparent;
+  border-right: 6px solid hsl(16, 100%, 30%);
+  border-left-width: 0px;
+}
+.button-toysworld::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  border: 6px solid transparent;
+  border-top: 6px solid hsl(16, 100%, 30%);
+  border-bottom-width: 0px;
+}
+.button-toysworld:active {
+  background: hsl(16, 100%, 40%);
+  top: 3px;
+  left: -3px;
+  box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
+}
+button-toysworld:active::before {
+  border: 3px solid transparent;
+  border-right: 3px solid hsl(16, 100%, 30%);
+  border-left-width: 0px;
+  left: -3px;
+}
+.button-toysworld:active::after {
+  border: 3px solid transparent;
+  border-top: 3px solid hsl(16, 100%, 30%);
+  border-bottom-width: 0px;
+  bottom: -3px;
+}
+.code{
+  color:green;
+  font-color:green;
+  }
+</style>
 </head>
-
 <body>
-<h1>每日一句</h1>
-<a href="login.html" target="_blank">登录/注册</a>
-<button id="getRecommandJuzi">获取今日推荐的语句</button>
-<button id="user">我</button>
-<button id="qiandao">每日签到</button>
-<p>每日一句简易音频播放器:D</p>
-<audio  loop="true" src="http://link.hhtjim.com/163/496869523.mp3" controls="true" autoplay="true">
-
-</audio>
-<b><p>温馨提示，每日签到可以获得一个数字积分，经常签到的人站长会做好贡献荣誉记录。
+<div id="imgage"><h1 style="color:aqua;border:3px"><center>每日一句</center></h1></div><br>
+<button class="button-toysworld">注册</button>
+<a href="login.html" target="_blank" ><button class="button-toysworld">登录</button></a>
+<button class="button-toysworld">获取今日推荐的语句</button>
+<button class="button-toysworld">我</button>
+<button class="button-toysworld">每日签到</button>
+<b><p>温馨提示:每日签到可以获得一个数字积分，经常签到的人站长会做好贡献荣誉记录。
 </p></b>
 <p>点击每日签到，自动跳转至我制作的广告页面或者第三方广告页面。如果是我的广告页面，不存在强制自动下载软件，病毒等不道德的行为，因为站长我也最讨厌这些东西了。
 每天点一下，可以获得积分，然后，我也能靠这个获取一点资金，因为目前是学生，所以做好多事情要钱，购买可靠的虚拟主机要花钱，投放广告要花钱。
@@ -48,6 +101,6 @@
   但是，我还是会做人更道德一点，不会写强制自动弹出广告的代码，全是用户自愿的（激励广告），至于一些sdk会不会存在未经开发者许可擅自弹出广告的情况
   我就不得而知了。</p>
   <hr/>
-<p>每日一句，记录你的美好生活</p>
+<code>每日一句，记录你的美好生活</code>
 </body>
 </html>
