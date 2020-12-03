@@ -1,66 +1,15 @@
 <html>
 <head>
 <meta charset="utf-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+<!--待测试手机适配浏览器的效果-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>每日一句，记录你的美好生活</title>
+<!--将样式移动至css文件，以保证html文件代码不会混乱-->
 <style>
-a{ text-decoration:none }
-#imgage{width:990px; height:60px; margin:0 auto; background:#FA6;} 
-.button-toysworld{
-  position: relative;
-  background: orangered;
-  border: none;
-  color: white;
-  padding: 15px 24px;
-  font-size: 1.4rem;
-  outline: none;
-  box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
-}
-.button-toysworld::before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 0;
-  left: -6px;
-  border: 6px solid transparent;
-  border-right: 6px solid hsl(16, 100%, 30%);
-  border-left-width: 0px;
-}
-.button-toysworld::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  bottom: -6px;
-  right: 0;
-  border: 6px solid transparent;
-  border-top: 6px solid hsl(16, 100%, 30%);
-  border-bottom-width: 0px;
-}
-.button-toysworld:active {
-  background: hsl(16, 100%, 40%);
-  top: 3px;
-  left: -3px;
-  box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
-}
-button-toysworld:active::before {
-  border: 3px solid transparent;
-  border-right: 3px solid hsl(16, 100%, 30%);
-  border-left-width: 0px;
-  left: -3px;
-}
-.button-toysworld:active::after {
-  border: 3px solid transparent;
-  border-top: 3px solid hsl(16, 100%, 30%);
-  border-bottom-width: 0px;
-  bottom: -3px;
-}
-.code{
-  color:green;
-  font-color:green;
-  }
+
 </style>
 </head>
 <body>
@@ -70,6 +19,9 @@ button-toysworld:active::before {
 <button class="button-toysworld">获取今日推荐的语句</button>
 <button class="button-toysworld">我</button>
 <button class="button-toysworld">每日签到</button>
+<input type="text" name="" value="" placeholder="请输入关键词来搜索"/>
+<button class="button-toysworld" onclick="search()">搜索</button>
+<button class="button-toysworld" onclick="upload()">投稿</button>
 <b><p>温馨提示:每日签到可以获得一个数字积分，经常签到的人站长会做好贡献荣誉记录。
 </p></b>
 <p>点击每日签到，自动跳转至我制作的广告页面或者第三方广告页面。如果是我的广告页面，不存在强制自动下载软件，病毒等不道德的行为，因为站长我也最讨厌这些东西了。
