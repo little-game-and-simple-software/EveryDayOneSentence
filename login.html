@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <meta charset="utf-8">
     <title>登录页面</title>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -12,15 +13,15 @@
       <img width="200px" src="https://t.52hyjs.com:10086/2020/11/29/726924fd9843a.png" alt="小沙盒工作室">
     </a>
     <p style="color:red">注意，暂时提供找回密码服务，请牢记你的密码，或者把它记在本子上面</p>
-  <form class=""  method="post">
-  账号<input id="account" type="text" name="account" value=""/><br/>
-  密码<input id="pwd" type="password" name="pwd" value="">
+
+  账号<input id="account" type="text" name="account" value="" autocomplete="on"/><br/>
+  密码<input id="pwd" type="password" name="pwd" value="" autocomplete="on">
   <button id="showPwd" type="button" name="button">显示密码</button>
   <button id="hidePwd" type="button" name="button">隐藏密码</button>
-  <button id="login" type="submit" name="button">登录</button>
-  <button id="register" type="submit" name="button">注册</button>
+  <button id="Mylogin" type="submit" >登录</button>
+  <button id="register" type="submit">注册</button>
 
-  </form>
+
   <p>我在这个网页中首次使用Jquery,我感觉比原生js写起来更简单</p>
   <p>返回数据↓</p>
   <div id="log" style="overflow:auto;height:300px;width:70px;">
