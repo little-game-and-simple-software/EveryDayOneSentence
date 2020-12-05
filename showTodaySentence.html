@@ -2,21 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/index.css">
     <title>今日推荐的句子</title>
     <style>
       a{
-        border:solid;
-        border-width:1px;
-      }
+        border:1px solid yellow;
+		text-decoration: none;
+	}
+		
+		a:hover{
+			background-color: skyblue;
+			color:mediumvioletred;
+			border: 2px double orange;
+			font-size: 25px;
+			font-family: "叶根友行书繁";
+		}
+		
+		a:active{
+			background-color: red;
+			color:burlywood;
+		}
+		
+		.sentence{
+			color:royalblue;
+			background: #2FBC79;
+			font-size: 40px;
+			text-align: center;
+			font-family: "华文隶书";
+			border: 2px double purple;
+					
+		}
+		
+		.sentence::selection{
+			color:orange;
+			background: #FFFFFF;
+			font-family:"华文楷体";
+			border: 2px solid #B97E1D;
+		}
     </style>
   </head>
   <body>
-
-<h1 style="text-align:center">今日推荐的每日一句</h1>
-<p style="font-size:30px;text-align:center">这是NUll句子（未获取到值)</p>
-<a  href="userSpace.html"style="font-size:20px;text-align:center">作者：未知</a>
-<a class="button-toysworld" href="index.html" style="display:block;text-align:center">返回到主页</a>
-<a class="button-toysworld" href="search.html" style="display:block;text-align:center;margin-top:15px;">返回搜索页面</a>
+<h1 style="text-align:center">今日推荐的每日一句</h1><br><br><br>
+<div class="sentence">这是NUll句子（未获取到值)</div><br><br><br>
+<a href="index.html" style="display:block;text-align:center">返回到主页</a>
   </body>
 </html>
