@@ -12,8 +12,17 @@ a{ text-decoration:none }
 }
 .testDiv
 {
+  margin-top:5px;
   border:solid;
   border-width: 1px;
+  display:none;
+}
+.list_item
+{
+  border:dashed;
+  border-color: red;
+  border-width:1px;
+  margin-top:5px;
 }
 /*用户头像*/
 .userIcon

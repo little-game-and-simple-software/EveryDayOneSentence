@@ -1,3 +1,8 @@
+//展示公告
+function get_update_information()
+{
+  alert("暂时没有公告")
+}
 //搜索按钮 跳转搜索界面
 function search()
 {
@@ -10,17 +15,19 @@ function upload()
 }
 $(document).ready(function()
 {
-  $("#getRecommandJuzi").click(function()
+
+  $(".button-toysworld:eq(2)").click(function()
   {
     alert("敬请期待")
-    window.open("showTodaySentence.html")
+    window.open("showTodaySentence.html","_self")
   })
-  $("#qiandao").click(function()
+  //签到
+  $(".button-toysworld:eq(4)").click(function()
   {
     alert("请先登录")
-    window.open("qiandao.html")
+    window.open("qiandao.html","_self")
   })
-  $("#user").click(function()
+  $(".button-toysworld:eq(3)").click(function()
 {
   alert("请先登录")
   window.open("userSpace.html")

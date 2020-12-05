@@ -14,7 +14,29 @@ $(function()
     var result=search_with_keyword(keyword)
     //test_key_Search()
     console.log("返回的结果->"+result)
+    $(".testDiv:eq(0)").append("<a href='userSpace.html'>"+result+"</a>")
+
   })
+  //显示语句的按钮
+  $(".button-toysworld:eq(2)").click(function()
+  {
+  $(".testDiv:eq(1)").css("display","none")
+  $(".testDiv:eq(0)").css("display","block")
+  })
+  //显示用户的按钮
+  $(".button-toysworld:eq(3)").click(function()
+{
+  $(".testDiv:eq(0)").css("display","none")
+  $(".testDiv:eq(1)").css("display","block")
+})
+//显示全部
+$(".button-toysworld:eq(4)").click(function()
+{
+  $(".testDiv:eq(0)").css("display","block")
+  $(".testDiv:eq(1)").css("display","block")
+})
+
+
    // 开始写 jQuery 代码...
 
 })
@@ -23,7 +45,7 @@ var array=["测试是",'垃圾']
 function search_with_keyword(keyword)
 {
   //文字数组
-  var SentenceSet=["修正",'通用aaa','学生bbbbbbb']
+  var SentenceSet=["修正",'通用aaa','学生b']
   //遍历 改用简单算法
   //alert(SentenceSet.length)
   for(var i=0;i<SentenceSet.length;i++)
@@ -33,7 +55,7 @@ function search_with_keyword(keyword)
     console.log("当前被匹配的字符串长度"+currentValue.length)
     if(currentValue.indexOf(keyword)!=-1)
     {
-      alert("匹配到值")
+      alert("匹配到值->success")
       result_array.push(currentValue)
     }
   }
