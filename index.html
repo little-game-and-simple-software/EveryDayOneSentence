@@ -3,18 +3,23 @@
 <meta charset="utf-8">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="index.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+<!--JqueryUI-->
+<script src="js/thirdparty/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="js/thirdparty/jquery-ui-1.12.1.custom/jquery-ui.min.css"></link>
+<!--000000000000-->
+<link rel="stylesheet" href="css/index.css">
 <!--待测试手机适配浏览器的效果-->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>每日一句，记录你的美好生活</title>
-<!--将样式移动至css文件，以保证html文件代码不会混乱-->
-<style>
-
-</style>
 </head>
 <body>
+  <!--jQuery easyUI 界面-->
+  <div id="dialog" title="公告">
+  <p>暂时没有公告</p>
+</div>
+
 <div id="imgage"><h1 style="color:aqua;border:3px"><center>每日一句</center></h1></div><br>
-<button class="button-toysworld">注册</button>
+<a href="login.html" target="_blank" class="button-toysworld">注册</a>
 <a href="login.html" target="_blank" ><button class="button-toysworld">登录</button></a>
 <button class="button-toysworld">获取今日推荐的语句</button>
 <button class="button-toysworld">我</button>
@@ -24,6 +29,10 @@
 <button class="button-toysworld" onclick="upload()">投稿</button>
 <button class="button-toysworld" onclick="get_update_information()">公告</button>
 <a class="button-toysworld" href="https://www.bilibili.com/video/BV1pv41117ht" target="_blank">关于我们（视频）</a>
+<br>
+<a href="userSpace.html">点击进入用户空间->
+<img width="100px" src="https://t.52hyjs.com:10086/2020/12/05/1d4bc0260d377.jpg" alt="用户头像">
+</a>
 <b><p>温馨提示:每日签到可以获得一个数字积分，经常签到的人站长会做好贡献荣誉记录。
 </p></b>
 <p>点击每日签到，自动跳转至我制作的广告页面或者第三方广告页面。如果是我的广告页面，不存在强制自动下载软件，病毒等不道德的行为，因为站长我也最讨厌这些东西了。

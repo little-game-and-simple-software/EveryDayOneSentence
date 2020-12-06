@@ -18,10 +18,7 @@ function get_to_do_action_and_do_action()
   $action=$_POST['to_action'];
   $account_name=$_POST['account'];
   $pwd=$_POST['pwd'];
-
-  if($action=="login")
-  {
-
+  if($action=="login"){
     echo "从php返回的值：准备执行登录代码";
     echo "<br/>";
     echo "账号->". $account_name;
@@ -33,25 +30,46 @@ function get_to_do_action_and_do_action()
   if($action=="register")
   {
     echo "从php返回的值：准备执行注册代码";
-    echo "从php返回的值：准备执行登录代码";
     echo "<br/>";
     echo "账号->". $account_name;
     echo "<br/>";
     echo "密码->".$pwd;
     register($account_name,$pwd,$conn);
-  }
+    }
 }
 
-
+function login($account_name,$pwd,$conn)
+{
+  $seletSql="SELECT account,pwd from user";
+  $result=mysqli_query($conn,$seletSql);
+  var_dump($result);
+  printf("总共数据".mysqli_num_rows($result));
+  if (mysqli_num_rows($result) > 0) {
+    // 输出数据
+    while($row = mysqli_fetch_assoc($result))
+    {
+        echo "<br>"."账号->".$row["account"]."<br>密码->".$row["pwd"]."<br>";
+        if($account_name==$row["account"] and $pwd==$row['pwd'])
+        {
+          echo "账号密码正确->登录成功";
+          echo "<br>"."<a href='index.html'>返回主页</a>";
+        }
+    }
+}
+else {
+    echo "0 结果";
+}
+}
 function register($account_name,$pwd,$conn)
 {
   //第一步，先查询数据表中是否有和账号相同的值，如果相同，那么返回一句错误，此账号名已存在
   //如果不存在，那么就往数据表中添加一行新的数据
   $seletSql="SELECT account FROM user";
   $result=mysqli_query($conn,$seletSql);
-  //var_dump($result);
+  var_dump($result);
+
   $query_result=mysqli_fetch_all($result);
-  //var_dump($query_result);
+  var_dump($query_result);
   echo "<br/>";
   echo "查询结果". $query_result[0][0];
   //echo "<br/>"."得到的post数据".$account_name;
@@ -60,32 +78,44 @@ function register($account_name,$pwd,$conn)
       echo "<br/>错误，此账号名已存在,无法注册";
       echo "<br/>点击此链接返回";
       echo "<a href='login.html'>返回登录页面</a>";
+    //  mysqli_close($conn);
   }
   else
   {
-    echo "此账号名不存在，可以创建新用户";
-    get_latest_uid($conn);
-  }
+   echo "此账号名不存在，可以创建新用户";
+    $uid=get_latest_uid($conn);
+    echo "注册的新用户uid为->".$uid;
+    echo "<br>"."账户名称->". $account_name;
+    echo "<br>"."密码->".$pwd;
+    //注册
+  $reg_sql="INSERT INTO user VALUES($uid,'$account_name','$pwd') ";
+  $state=mysqli_query($conn,$reg_sql);
+   var_dump($state);
+   var_dump($uid);
+   var_dump($account_name);
+   var_dump($pwd);
+   echo "<br>"."执行状态->".$state;
+   echo "<br>"."执行完注册代码";
+   echo "<br>"."<a href='login.html'>点击此返回注册页面</a>";
+   //mysqli_close($conn);
 }
-function login()
-{
-
 }
 //获得最新用户的uid，以便给新用户分配int类型的uid 用于识别用户
 function get_latest_uid($conn)
 {
-$sql="SELECT Max(uid) FROM user";
-$pre_result=mysqli_query($conn,$sql);
-echo "<br>";
-$latest_uid=mysqli_fetch_array($pre_result);
-$latest_uid_value=$latest_uid[0];
-//新用户
-$newer_uid_value=$latest_uid_value+1;
-var_dump($latest_uid_value);
-//var_dump($latest_uid[1]);
-echo "最后用户uid为".$latest_uid_value;
-echo "<br>";
-echo "注册的新用户uid为->".$newer_uid_value;
+  $sql="SELECT Max(uid) FROM user";
+  $pre_result=mysqli_query($conn,$sql);
+  echo "<br>";
+  $latest_uid=mysqli_fetch_array($pre_result);
+  $latest_uid_value=$latest_uid[0];
+  //新用户
+  $newer_uid_value=$latest_uid_value+1;
+  var_dump($latest_uid_value);
+  //var_dump($latest_uid[1]);
+  echo "最后用户uid为".$latest_uid_value;
+  echo "<br>";
+  //mysqli_close($conn);
+  return $newer_uid_value;
 }
 //首先要链接到数据库
 function connect_to_db()
@@ -94,7 +124,7 @@ function connect_to_db()
   $username = "root";
   $password = "";
   global $conn;
-  $conn = new mysqli($servername, $username, $password);
+  $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
   {
   echo "连接失败";

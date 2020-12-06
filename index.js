@@ -1,7 +1,8 @@
 //展示公告
 function get_update_information()
 {
-  alert("暂时没有公告")
+  $("#dialog").dialog()
+//  alert("暂时没有公告")
 }
 //搜索按钮 跳转搜索界面
 function search()
@@ -18,6 +19,7 @@ $(document).ready(function()
 
   $(".button-toysworld:eq(2)").click(function()
   {
+
     alert("敬请期待")
     window.open("showTodaySentence.html","_self")
   })
