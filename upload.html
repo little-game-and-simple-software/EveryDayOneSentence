@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>每日一句投稿页面</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+      h1
+      {
+        text-align:center;
+      }
+      input
+      {
+        //height:1000px;
+        width:1000px;
+      }
+    </style>
+    <script>
+      $(function()
+      {
+        var texts=0
+        $("#in").keydown(function()
+        {
+          texts+=1
+          var left=100-texts
+          $("#left").text("还能输入"+left+"字")
+          if(left<=0)
+          {
+            $("#in").attr("disabled","disabled")
+            alert("字数上限 不能输入")
+          }
+        })
+        $("#change").click(function()
+        {
+          $("#in").attr("disabled",false)
+        })
+      })
+    </script>
+  </head>
+  <body>
+<h1>每日一句投稿页面</h1>
+<input id="in" type="text" name="" value="" placeholder="请输入文字" >
+<button type="button" name="button">投稿</button>
+<button id="change">修改</button>
+<p id="left">还能再输入100字</p>
+  </body>
+</html>

@@ -13,13 +13,12 @@ function search()
 function upload()
 {
   alert("请先登录")
+  window.open("upload.html")
 }
 $(document).ready(function()
 {
-
   $(".button-toysworld:eq(2)").click(function()
   {
-
     alert("敬请期待")
     window.open("showTodaySentence.html","_self")
   })
