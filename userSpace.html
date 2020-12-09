@@ -2,11 +2,11 @@
 <html >
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="user/favicon.ico">
     <title>用户界面</title>
       <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script src="js/userSpace.js">
-
-      </script>
+      <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <script src="js/userSpace.js"></script>
   </head>
   <body>
 <a href="index.html">
@@ -18,9 +18,11 @@
 <img src="https://static.missevan.com/mimages/201607/05/4beb19216709771dbaf19badebe2890b161146.png" width="1200px" height="200px" style="background:red" alt="背景">
 <br/>
     <img width="6%" src="https://t.52hyjs.com:10086/2020/12/05/1d4bc0260d377.jpg" alt="用户头像">
-<h2>用户名称:小沙子</h2>
-<h3>uid:1</h3>
+<h2 id="username">用户名称:小沙子</h2>
+<h3 id="uid">uid:1</h3>
 <button id="change_head_img">更换头像</button>
+<button id="change_user_pwd">更改账号密码</button>
+<button id="logout" >退出登录</button>
 <h4>我收藏的句子</h4>
 <ul>
   <a href="showTodaySentence.html"><li>测试句子1</li></a>

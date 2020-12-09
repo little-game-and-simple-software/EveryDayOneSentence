@@ -1,0 +1,26 @@
+$(function()
+{
+alert("欢迎来到用户账户中心")
+  $("#change_user_name").click(function()
+  {
+    if(confirm("确认要修改吗"))
+    {
+      alert("已经修改")
+    }
+    else
+    {
+      alert("已经取消")
+    }
+  })
+  $("#change_pwd").click(function()
+  {
+  if(confirm("确认要修改吗"))
+  {
+    alert("已经修改")
+  }
+  else
+  {
+    alert("已经取消")
+  }
+  })
+})

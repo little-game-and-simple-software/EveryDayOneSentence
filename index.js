@@ -17,6 +17,22 @@ function upload()
 }
 $(document).ready(function()
 {
+  //判断cookie
+  if($.cookie('login'))
+  {
+    alert("测试->存在cookie")
+    if($.cookie('login'))
+    {
+      //如果登录成功 隐藏注册按钮等
+      $('.button-toysworld:eq(0)').hide()
+      $('.button-toysworld:eq(1)').hide()
+    }
+  }
+  $('#debug').click(function()
+  {
+    $('.button-toysworld:eq(0)').show()
+    $('.button-toysworld:eq(1)').show()
+  })
   $(".button-toysworld:eq(2)").click(function()
   {
     alert("敬请期待")

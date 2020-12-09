@@ -1,5 +1,17 @@
 $(function()
 {
+  //获得cookie
+  if($.cookie('login'))
+  {
+    $("#username").text("用户名称(暂时使用账户名称)："+$.cookie("account"))
+    $("#uid").text("uid:"+$.cookie("uid"))
+  }
+  else
+  {
+    alert("错误，你未登录，没有cookie记录！")
+    // TODO: 正式上线 需要添加参数"_self"
+    window.open("index.html")
+  }
   //更换用户头像功能
   $("#change_head_img").click(function()
   {
@@ -12,5 +24,20 @@ $(function()
     alert("测试账号->"+account)
     alert("测试密码->"+pwd)
 
+  })
+  $("#change_user_pwd").click(function()
+  {
+    var c=confirm("确定要更改你的密码吗？")
+    if(c)
+    {
+      window.open("user/change_user_pwd.html")
+    }
+    else{}
+  })
+  //退出登录
+  $('#logout').click(function()
+  {
+    //alert("退出登录！")
+    $.removeCookie('login',{path:'/'})
   })
 })

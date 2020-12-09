@@ -17,6 +17,13 @@ a{ text-decoration:none }
   border-width: 1px;
   display:none;
 }
+.testDiv_border
+{
+  text-align: center;
+  margin-top:5px;
+  border:solid;
+  border-width: 1px;
+}
 .list_item
 {
   border:dashed;

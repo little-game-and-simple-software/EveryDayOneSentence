@@ -29,7 +29,17 @@ $(function()
       {
         alert(status)
         //alert(data)
-        document.write(data)
+        //document.write(data)
+        console.log(data)
+        if(data)
+        {
+          $.cookie("login","true",{path:'/'})
+          $.cookie("account",value1,{path:'/'})
+          $.cookie("pwd",value2,{path:'/'})
+          alert("登录成功")
+          //用户信息保存完成后回到主页
+          window.open("index.html","_self")
+        }
       })
     }
     else
@@ -50,7 +60,9 @@ $("#register").click(function()
     {
       alert(status)
       //alert(data)
-      document.write(data)
+      //document.write(data)
+      console.log(data)
+      //alert(data)
     })
   }
   else
