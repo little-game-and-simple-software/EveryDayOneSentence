@@ -2,13 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
     <title>今日推荐的句子</title>
     <style>
       a{
         border:1px solid yellow;
 		text-decoration: none;
 	}
-		
+
 		a:hover{
 			background-color: skyblue;
 			color:mediumvioletred;
@@ -16,12 +18,12 @@
 			font-size: 25px;
 			font-family: "叶根友行书繁";
 		}
-		
+
 		a:active{
 			background-color: red;
 			color:burlywood;
 		}
-		
+
 		.sentence{
 			color:royalblue;
 			background: #2FBC79;
@@ -29,9 +31,9 @@
 			text-align: center;
 			font-family: "华文隶书";
 			border: 2px double purple;
-					
+
 		}
-		
+
 		.sentence::selection{
 			color:orange;
 			background: #FFFFFF;
@@ -39,6 +41,7 @@
 			border: 2px solid #B97E1D;
 		}
     </style>
+    <script src="js/get_today_sentence.js"></script>
   </head>
   <body>
 <h1 style="text-align:center">今日推荐的每日一句</h1><br><br><br>
