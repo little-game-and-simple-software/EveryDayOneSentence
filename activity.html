@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>本月活动</title>
+    <meta charset="utf-8">
+    <style>
+    ol
+    {
+    background-color: orange;
+    }
+    ol a
+    {
+      font-size: 50px;
+    }
+    ol li
+    {
+      border:solid;
+      border-width: 1px;border-color: black;
+      margin-top:5px;
+    }
+    .page
+    {
+      font-size: 30px;
+      background-color: yellow;
+    }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+    //按钮音效
+    $(function()
+    {
+      //按钮音效
+      $(".page").click(function()
+      {
+        var audio_effect=$("#effect")
+        //alert(audio_effect)
+        console.log(audio_effect)
+        audio_effect[0].play()
+      })
+
+    })
+    </script>
+  </head>
+  <body>
+    <audio id="effect" src="audio/place_stone.wav">
+
+    </audio>
+<h1 style="background:orange;"><center>本月活动</center></h1>
+<ol>
+  <li><a href="">打卡挑战<a></li>
+  <li><a href="">签到挑战</li>
+  <li><a href="">贡献挑战</a></li>
+  <li><a href="">更多内容敬请期待</a></li>
+</ol>
+<div>
+  <center>
+<button class="page">上一页</button>
+<button class="page">下一页</button>
+</center>
+
+</div>
+  </body>
+</html>

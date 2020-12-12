@@ -10,6 +10,11 @@ a{ text-decoration:none }
   border:solid;
   border-width: 1px;
 }
+/*搜索界面的输入框样式*/
+#InputSearch
+{
+  width:700px;
+}
 .testDiv
 {
   margin-top:5px;

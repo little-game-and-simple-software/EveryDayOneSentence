@@ -3,6 +3,7 @@ var keyword=""
 var result_array=[]
 $(function()
 {
+  //搜索按钮
   $(".button-toysworld:eq(1)").click(function()
   {
     //alert("toysworld类的按钮被按下")
@@ -17,20 +18,25 @@ $(function()
     $(".testDiv:eq(0)").append("<a href='userSpace.html'>"+result+"</a>")
 
   })
-  //显示语句的按钮
+  //跳转按钮
   $(".button-toysworld:eq(2)").click(function()
+  {
+    alert("功能未开发")
+  })
+  //显示语句的按钮
+  $(".button-toysworld:eq(3)").click(function()
   {
   $(".testDiv:eq(1)").css("display","none")
   $(".testDiv:eq(0)").css("display","block")
   })
   //显示用户的按钮
-  $(".button-toysworld:eq(3)").click(function()
+  $(".button-toysworld:eq(4)").click(function()
 {
   $(".testDiv:eq(0)").css("display","none")
   $(".testDiv:eq(1)").css("display","block")
 })
 //显示全部
-$(".button-toysworld:eq(4)").click(function()
+$(".button-toysworld:eq(5)").click(function()
 {
   $(".testDiv:eq(0)").css("display","block")
   $(".testDiv:eq(1)").css("display","block")

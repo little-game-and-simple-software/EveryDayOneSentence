@@ -35,14 +35,22 @@
         {
           $("#in").attr("disabled",false)
         })
+        //投稿功能
+        $("#upload").click(function()
+        {
+          // TODO: 投稿功能
+          alert("功能开发中")
+        })
       })
     </script>
   </head>
   <body>
 <h1>每日一句投稿页面</h1>
 <input id="in" type="text" name="" value="" placeholder="请输入文字" >
-<button type="button" name="button">投稿</button>
+<button id="upload">投稿</button>
 <button id="change">修改</button>
 <p id="left">还能再输入100字</p>
+<!--详细说明-->
+<p>因为是每日一句，同时也是为了节省网站空间，所以每个人每天只能提交一句话</p>
   </body>
 </html>
