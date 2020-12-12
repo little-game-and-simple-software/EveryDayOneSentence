@@ -5,6 +5,8 @@
     <title>每日一句投稿页面</title>
     <link rel="stylesheet" href="css/index.css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
     <style>
       h1
       {
@@ -19,6 +21,8 @@
     <script>
       $(function()
       {
+        var cookie_usr=$.cookie('account')
+        alert("当前用户->"+cookie_usr)
         var texts=0
         $("#in").keydown(function()
         {
@@ -38,14 +42,30 @@
         //投稿功能
         $("#upload").click(function()
         {
+          var to_post_text=$("#in").val()
+          alert(to_post_text)
           // TODO: 投稿功能
           alert("功能开发中")
+          $.post("php/upload.php",{text:to_post_text,user:cookie_usr},function(data,status)
+          {
+            //document.write(data)
+            console.log(data)
+            if(data==true)
+            {
+              alert("投稿成功")
+            }
+            else
+            {
+              alert("投稿失败")
+            }
+          })
         })
       })
     </script>
   </head>
   <body>
-<h1>每日一句投稿页面</h1>
+<h1 style="background:orange;">每日一句投稿页面</h1>
+<a href="index.html">返回主站</a>
 <input id="in" type="text" name="" value="" placeholder="请输入文字" >
 <button id="upload">投稿</button>
 <button id="change">修改</button>

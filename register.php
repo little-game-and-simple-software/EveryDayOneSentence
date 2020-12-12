@@ -8,6 +8,8 @@ header("Content-Type:text/plain;charset=utf-8");
 connect_to_db();
 get_to_do_action_and_do_action();
 
+// TODO: 新的登录sql语句
+//$sql="SELECT pwd FROM user WHERE account=$_POST \['account']";
 //获得前端发送过来的行为 并根据不同注册或者登录行为选择不同的function
 function get_to_do_action_and_do_action()
 {
@@ -81,7 +83,7 @@ function register($account_name,$pwd,$conn)
       {
         $uid=get_latest_uid($conn);
         //注册
-        $reg_sql="INSERT INTO user VALUES($uid,'$account_name','$pwd') ";
+        $reg_sql="INSERT INTO user VALUES($uid,'$account_name','$pwd')";
         $state=mysqli_query($conn,$reg_sql);
         echo $state;
       }

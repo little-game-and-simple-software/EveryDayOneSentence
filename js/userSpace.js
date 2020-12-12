@@ -1,5 +1,6 @@
 $(function()
 {
+  var usr=$.cookie("account")
   //获得cookie
   if($.cookie('login'))
   {
@@ -12,6 +13,7 @@ $(function()
     // TODO: 正式上线 需要添加参数"_self"
     window.open("index.html")
   }
+  get_user_upload_juzi(usr);
   //更换用户头像功能
   $("#change_head_img").click(function()
   {
@@ -40,4 +42,26 @@ $(function()
     //alert("退出登录！")
     $.removeCookie('login',{path:'/'})
   })
+  //NOTE: 获得用户的句子
+  function get_user_upload_juzi(usr)
+  {
+    $.post("php/get_user_upload_juzi.php",{usr:usr},function(data,status)
+    {
+      console.log(data)
+      console.log(status)
+    //  document.write(data)
+    var splited=data.split("<br>")
+    console.log(splited)
+    for(var i=0;i<splited.length;i++)
+    {
+      console.log("执行了"+i+"次")
+      $("#stn-root").append("<li><a href=''>"+splited[i]+"</a></li>")
+    }
+    })
+  /*  $.get("get_user_upload_juzi.php",function(data,status)
+    {
+      console.log(status)
+      document.write(data)
+    })*/
+  }
 })

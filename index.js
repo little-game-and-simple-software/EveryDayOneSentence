@@ -12,7 +12,7 @@ function search()
 }
 function upload()
 {
-  alert("请先登录")
+  //alert("请先登录")
   window.open("upload.html")
 }
 $(document).ready(function()

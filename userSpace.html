@@ -7,6 +7,12 @@
       <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
       <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
       <script src="js/userSpace.js"></script>
+      <style>
+        #stn-root,#collect
+        {
+          background: orange;
+        }
+      </style>
   </head>
   <body>
 <a href="index.html">
@@ -24,7 +30,12 @@
 <button id="change_user_pwd">更改账号密码</button>
 <button id="logout" >退出登录</button>
 <h4>我收藏的句子</h4>
-<ul>
+<ul id="collect">
+  <a href="showTodaySentence.html"><li>测试句子1</li></a>
+  <a href="showTodaySentence.html"><li>测试句子2</li></a>
+</ul>
+<h4>我投稿的句子</h4>
+<ul id="stn-root">
   <a href="showTodaySentence.html"><li>测试句子1</li></a>
   <a href="showTodaySentence.html"><li>测试句子2</li></a>
 </ul>
