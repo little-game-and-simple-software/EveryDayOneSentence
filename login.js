@@ -24,10 +24,10 @@ $(function()
     var value2=$("#pwd").val();
     if(value1!='' && value2!='')
     {
-      alert("可以登录")
+      alert("登录中")
       $.post("register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
       {
-        alert(status)
+        alert('http->'+status)
         //alert(data)
         //document.write(data)
         console.log(data)
@@ -39,6 +39,10 @@ $(function()
           alert("登录成功")
           //用户信息保存完成后回到主页
           window.open("index.html","_self")
+        }
+        else if(data=="")
+        {
+          alert("错误,账号不存在")
         }
       })
     }
@@ -55,13 +59,21 @@ $("#register").click(function()
   var value2=$("#pwd").val();
   if(value1!='' && value2!='')
   {
-    alert("可以注册")
+    alert("注册中")
     $.post("register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
     {
-      alert(status)
+      alert('http状态'+status)
       //alert(data)
       //document.write(data)
       console.log(data)
+      if(data==true)
+      {
+        alert("注册成功，请牢记你的账号密码")
+      }
+      else
+      {
+        alert("注册失败，账号已存在")
+      }
       //alert(data)
     })
   }
