@@ -36,6 +36,17 @@ a{ text-decoration:none }
   border:solid;
   border-width: 1px;
 }
+.testDiv_border_no_layout
+{
+  margin-top:5px;
+  border:solid;
+  border-width: 1px;
+}
+/*音乐进度条*/
+progress
+{
+  width:100%;
+}
 .list_item
 {
   border:dashed;

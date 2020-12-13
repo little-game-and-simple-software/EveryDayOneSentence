@@ -25,9 +25,9 @@ $(function()
     if(value1!='' && value2!='')
     {
       alert("登录中")
-      $.post("register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
+      $.post("php/register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
       {
-        alert('http->'+status)
+        //alert('http->'+status)
         //alert(data)
         //document.write(data)
         console.log(data)
@@ -42,7 +42,7 @@ $(function()
         }
         else if(data=="")
         {
-          alert("错误,账号不存在")
+          alert("错误,账号或密码不正确")
         }
       })
     }
@@ -60,7 +60,7 @@ $("#register").click(function()
   if(value1!='' && value2!='')
   {
     alert("注册中")
-    $.post("register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
+    $.post("php/register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
     {
       alert('http状态'+status)
       //alert(data)

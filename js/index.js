@@ -102,4 +102,40 @@ $("#logout").click(function()
     $('.button-toysworld:eq(0)').show()
     $('.button-toysworld:eq(1)').show()
 })
+//播放器
+$("#play").click(function()
+{
+  $("#bgm")[0].play()
+})
+//暂停
+$("#pause").click(function()
+{
+  $("#bgm")[0].pause()
+})
+//设置音量
+$("#vol-set").click(function()
+{
+  var v=$("#vol-set")
+  var volume=v.val()
+var float_volume=Number(volume/100)
+  console.log(float_volume)
+
+  console.log($("#bgm")[0].volume)
+  $("#vol").text("音量设置："+volume+"%")
+ $("#bgm")[0].volume=float_volume
+})
+//切换背景音乐
+$("#change_bgm").click(function()
+{
+  alert("切换音乐！")
+  var url=$("#bgm_url").val()
+  $("#bgm").attr("src",url)
+})
+//重置背景音乐
+$("#reset_bgm").click(function()
+{
+  alert("重置背景音乐！")
+  $("#bgm").attr("src","https://sound-ks1.cdn.missevan.com/aod/202010/23/8b49d1d92e992adb6fd21b052c8e4769202649.m4a")
+})
+
 })

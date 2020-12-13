@@ -52,40 +52,25 @@ function login($account_name,$pwd,$conn)
 }
 function register($account_name,$pwd,$conn)
 {
-   $seletSql="SELECT account FROM user";
+   $seletSql="SELECT account FROM user WHERE(account='$account_name')";
    $result=mysqli_query($conn,$seletSql);
    #账号状态
    $account_state="";
-  //mysqli_fetch_assoc()会自动查找下一行数据
-  //NOTE:遍历数据表 查询是否存在账号
-    if (mysqli_num_rows($result) > 0)
-    {
-          while($row = mysqli_fetch_assoc($result))
-          {
-            //数据库内的账号名称
-            //echo '数据库中的账号->'.$row['account'];
-            if($account_name==$row['account'])
-            {
-              //echo "账号已存在,不能注册";
-              $account_state="cant reg";
-            }
-            else
-            {
-              //echo "账号不存在,可以注册";
-              $account_state="can reg";
-            }
-           }
-           //循环结束后 取得最终结果
-           //echo $account_state;
-   }
+   $rows=mysqli_num_rows($result);
+   if($rows==0)
+   {
+    // echo '账号不存在可以注册';
      //NOTE: 实际注册代码 //
-     if($account_state=="can reg")
-      {
         $uid=get_latest_uid($conn);
         //注册
         $reg_sql="INSERT INTO user VALUES($uid,'$account_name','$pwd')";
         $state=mysqli_query($conn,$reg_sql);
         echo $state;
+   }
+   else
+   {
+     //echo "账号已存在";
+     echo false;
       }
 }
 //获得最新用户的uid，以便给新用户分配int类型的uid 用于识别用户
