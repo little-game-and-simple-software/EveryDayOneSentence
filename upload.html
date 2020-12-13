@@ -24,10 +24,14 @@
         var cookie_usr=$.cookie('account')
         alert("当前用户->"+cookie_usr)
         var texts=0
+        //初始化剩余值
+        var left=100
+        var cookie_login_state=$.cookie('login')
+        console.log(cookie_login_state)
         $("#in").keydown(function()
         {
           texts+=1
-          var left=100-texts
+          left=100-texts
           $("#left").text("还能输入"+left+"字")
           if(left<=0)
           {
@@ -38,6 +42,10 @@
         $("#change").click(function()
         {
           $("#in").attr("disabled",false)
+          texts=0
+          left=100
+          $("#left").text("还能输入"+left+"字")
+          $("#in").val("")
         })
         //投稿功能
         $("#upload").click(function()
@@ -45,20 +53,28 @@
           var to_post_text=$("#in").val()
           alert(to_post_text)
           // TODO: 投稿功能
-          alert("功能开发中")
-          $.post("php/upload.php",{text:to_post_text,user:cookie_usr},function(data,status)
+          //alert("功能开发中")
+          if(cookie_login_state)
           {
-            //document.write(data)
-            console.log(data)
-            if(data==true)
+            $.post("php/upload.php",{text:to_post_text,user:cookie_usr},function(data,status)
             {
-              alert("投稿成功")
-            }
-            else
-            {
-              alert("投稿失败")
-            }
-          })
+                //document.write(data)
+                console.log(data)
+                if(data==true)
+                {
+                  alert("投稿成功")
+                }
+                else
+                {
+                  alert("投稿失败")
+                }
+              })
+         }
+         else
+         {
+           alert("未登录，不能投稿")
+         }
+
         })
       })
     </script>
@@ -68,7 +84,7 @@
 <a href="index.html">返回主站</a>
 <input id="in" type="text" name="" value="" placeholder="请输入文字" >
 <button id="upload">投稿</button>
-<button id="change">修改</button>
+<button id="change">修改[实际就是重置输入框]</button>
 <p id="left">还能再输入100字</p>
 <!--详细说明-->
 <p>因为是每日一句，同时也是为了节省网站空间，所以每个人每天只能提交一句话</p>

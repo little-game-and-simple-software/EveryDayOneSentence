@@ -11,7 +11,7 @@ $(function()
   {
     alert("错误，你未登录，没有cookie记录！")
     // TODO: 正式上线 需要添加参数"_self"
-    window.open("index.html")
+    window.open("index.html","_self")
   }
   get_user_upload_juzi(usr);
   //更换用户头像功能
@@ -41,6 +41,8 @@ $(function()
   {
     //alert("退出登录！")
     $.removeCookie('login',{path:'/'})
+    $.removeCookie('account',{path:'/'})
+    $.removeCookie('pwd',{path:'/'})
   })
   //NOTE: 获得用户的句子
   function get_user_upload_juzi(usr)
@@ -58,10 +60,5 @@ $(function()
       $("#stn-root").append("<li><a href=''>"+splited[i]+"</a></li>")
     }
     })
-  /*  $.get("get_user_upload_juzi.php",function(data,status)
-    {
-      console.log(status)
-      document.write(data)
-    })*/
   }
 })

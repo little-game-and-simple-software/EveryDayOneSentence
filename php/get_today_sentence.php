@@ -5,32 +5,20 @@ $juzi=[];
 header("Content-Type:text/plain;charset=utf-8");
 //首先要链接到数据库
 connect_to_db();
-$sql="SELECT juzi FROM juzi";
-
-$result=mysqli_query($conn,$sql);
-
-$nums=mysqli_num_rows($result);
-var_dump($nums);
-echo rand(1,$nums);
+$juzi_array=get_all_juzi($conn);
+$random_value=rand(0,count($juzi_array)-1);
+//echo $random_value;
+echo $juzi_array[$random_value][0];
 //获取所有的句子
-if($nums>1)
+function get_all_juzi($conn)
 {
-  echo "选择随机句子(未完成)";
-//  $r=mysqli_fetch_assoc();
-/*  while($row = mysqli_fetch_assoc($result))
-  {
-    //  echo "<br>"."账号->".$row["account"]."<br>密码->".$row["pwd"]."<br>";
-      if($account_name==$row["account"] and $pwd==$row['pwd'])
-      {
-      //  echo "账号密码正确->登录成功";
-      //  echo "<br>"."<a href='index.html'>返回主页</a>";
-        //$user_array=[];
-        //$user_array.append($account_name);
-        echo true;
-      }
-  }*/
-}
+  $sql="SELECT juzi FROM sentence";
 
+  $result=mysqli_query($conn,$sql);
+  $all=mysqli_fetch_all($result,MYSQLI_NUM);
+//  print_r($all);
+  return $all;
+}
 function connect_to_db()
 {
   $servername = "127.0.0.1";

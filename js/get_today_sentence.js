@@ -7,6 +7,7 @@ $(function()
   {
     //document.write(data)
     console.log(data)
+    $(".sentence").text(data)
   })
   //点赞功能
   $("#like").click(function()

@@ -4,6 +4,13 @@ a{ text-decoration:none }
   display: block;
 
 }
+/*登录头像*/
+#login
+{
+  display:inline-block;
+  width: 100px;
+  background-color: orange;
+}
 /*div标签用于布局和测试边框，请不要删除样式*/
 #searchBar
 {

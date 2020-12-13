@@ -6,7 +6,7 @@ $(function()
   //搜索按钮
   $(".button-toysworld:eq(1)").click(function()
   {
-    //alert("toysworld类的按钮被按下")
+    alert("toysworld类的按钮被按下")
     //获取搜索框的值
     keyword=$("#InputSearch").val()
     alert("待搜索的关键词"+keyword)
