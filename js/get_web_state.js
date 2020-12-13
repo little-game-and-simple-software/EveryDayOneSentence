@@ -2,7 +2,7 @@ $(function()
 {
   //alert("获取状态")
   //$.get()
-  $.get('php/get_web_state.php',function(data,status)
+  $.get('爱给网正式php/get_web_state.php',function(data,status)
   {
     //document.write(data)
   //  console.log('网站状态'+data)

@@ -25,7 +25,8 @@ $(function()
     if(value1!='' && value2!='')
     {
       alert("登录中")
-      $.post("php/register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
+      //php/register.php
+      $.post("爱给网正式php/register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
       {
         //alert('http->'+status)
         //alert(data)
@@ -60,7 +61,7 @@ $("#register").click(function()
   if(value1!='' && value2!='')
   {
     alert("注册中")
-    $.post("php/register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
+    $.post("爱给网正式php/register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
     {
       alert('http状态'+status)
       //alert(data)

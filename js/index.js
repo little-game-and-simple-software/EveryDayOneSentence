@@ -49,14 +49,7 @@ $(document).ready(function()
   //建议反馈按钮
   $(".button-toysworld:eq(8)").click(function()
   {
-  //var text= prompt('请输入您宝贵的建议')
-  /*$.post("php/feedback.php",function(data,status)
-  {
-    console.log(status)
-    console.log(data)
-    //document.write(data)
-  //  alert(data)
-})*/
+    
 // NOTE: 由于php自带mail方法需要服务器支持，所以暂时不同php发送邮件，需要用户手动发送邮件
     var x=confirm("请发送反馈建议给2439905184@qq.com")
     if(x)
