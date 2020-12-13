@@ -1,4 +1,4 @@
-var local_dir="php/"
-var internet_dir="爱给网正式php/"
+Truephpvar local_dir="php/"
+var internet_dir="Truephp/"
 var local=["php/register.php","php"]
 var internet=[]

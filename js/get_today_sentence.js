@@ -3,7 +3,7 @@ $(function()
   //句子被喜欢的次数 初始化
   var likes=0
   alert("获取今天的句子！")
-  $.get("爱给网正式php/get_today_sentence.php",function(data,status)
+  $.get("Truephp/get_today_sentence.php",function(data,status)
   {
     //document.write(data)
     console.log(data)

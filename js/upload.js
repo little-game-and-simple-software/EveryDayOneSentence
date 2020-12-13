@@ -36,7 +36,7 @@ $(function()
     //alert("功能开发中")
     if(cookie_login_state)
     {
-      $.post("爱给网正式php/upload.php",{text:to_post_text,user:cookie_usr},function(data,status)
+      $.post("Truephp/upload.php",{text:to_post_text,user:cookie_usr},function(data,status)
       {
           //document.write(data)
           console.log(data)

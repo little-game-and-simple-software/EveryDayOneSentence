@@ -47,7 +47,7 @@ $(function()
   //NOTE: 获得用户的句子
   function get_user_upload_juzi(usr)
   {
-    $.post("爱给网正式php/get_user_upload_juzi.php",{usr:usr},function(data,status)
+    $.post("Truephp/get_user_upload_juzi.php",{usr:usr},function(data,status)
     {
       console.log(data)
       console.log(status)
