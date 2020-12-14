@@ -1,3 +1,6 @@
+//设置php的路径模式
+var php_path=set_php_path_mode("internet")
+console.log(php_path)
 //展示公告
 function get_update_information()
 {
@@ -49,7 +52,7 @@ $(document).ready(function()
   //建议反馈按钮
   $(".button-toysworld:eq(8)").click(function()
   {
-    
+
 // NOTE: 由于php自带mail方法需要服务器支持，所以暂时不同php发送邮件，需要用户手动发送邮件
     var x=confirm("请发送反馈建议给2439905184@qq.com")
     if(x)

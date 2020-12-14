@@ -1,3 +1,6 @@
+//设置php的路径模式
+var php_path=set_php_path_mode("internet")
+console.log(php_path)
 $(function()
 {
   var usr=$.cookie("account")
@@ -47,7 +50,7 @@ $(function()
   //NOTE: 获得用户的句子
   function get_user_upload_juzi(usr)
   {
-    $.post("Truephp/get_user_upload_juzi.php",{usr:usr},function(data,status)
+    $.post(php_path+"get_user_upload_juzi.php",{usr:usr},function(data,status)
     {
       console.log(data)
       console.log(status)

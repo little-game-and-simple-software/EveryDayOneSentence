@@ -1,9 +1,12 @@
+//设置php的路径模式
+var php_path=set_php_path_mode("internet")
+console.log(php_path)
 $(function()
 {
   //句子被喜欢的次数 初始化
   var likes=0
   alert("获取今天的句子！")
-  $.get("Truephp/get_today_sentence.php",function(data,status)
+  $.get(php_path+"get_today_sentence.php",function(data,status)
   {
     //document.write(data)
     console.log(data)
