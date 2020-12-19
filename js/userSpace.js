@@ -42,10 +42,12 @@ $(function()
   //退出登录
   $('#logout').click(function()
   {
-    //alert("退出登录！")
+
     $.removeCookie('login',{path:'/'})
     $.removeCookie('account',{path:'/'})
     $.removeCookie('pwd',{path:'/'})
+    alert("退出登录！")
+    window.open("index.html","_self")
   })
   //NOTE: 获得用户的句子
   function get_user_upload_juzi(usr)

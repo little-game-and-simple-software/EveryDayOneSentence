@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>审核页面</title>
+    <style>
+      li
+      {
+        background:orange;
+        font-size:35px;
+        margin-top: 5px;
+      }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+    $(function()
+    {
+      // NOTE: 通过
+      $("#pass_btn").click(function()
+      {
+        alert("pass")
+        $("#pass_btn").css("background","green")
+        // TODO: 从列表中删除通过的行
+      })
+      // NOTE: 不通过
+      $("#faile_btn").click(function()
+      {
+        alert("failed")
+        $("#faile_btn").css("background","red")
+        // TODO: 从列表中设置不通过的行背景颜色为红色
+      })
+    })
+    </script>
+  </head>
+  <body>
+    <h1 align="center">每日一句审核系统v1 2020/12/19</h1>
+    <h2>以下是待审核的句子</h2>
+    <p>html动态插入li模板</p>
+    <code>
+      <xmp><li>string aaa</li><button id="pass_btn">可以通过</button><button id="faile_btn">不可以通过</button>
+      </xmp>
+</code>
+    <div>
+      <ol>
+        <li>string aaa<button id="pass_btn">可以通过</button><button id="faile_btn">不可以通过</button></li>
+        <li>string aaa<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
+        <li>string aaa<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
+
+      </ol>
+      </div>
+  </body>
+</html>

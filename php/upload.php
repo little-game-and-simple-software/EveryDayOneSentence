@@ -3,15 +3,18 @@ header("Content-Type:text/plain;charset=utf-8");
 $conn="";
 connect_to_db();
 upload($conn);
+//投稿功能，默认投稿至审核数据表，审核通过之后，复制数据到句子总表
 function upload($conn)
 {
   $today=date("Y/m/d");
   $text=$_POST['text'];
   $user=$_POST['user'];
 
-  $sql="INSERT INTO sentence VALUES('$text','$today','$user')";
+// NOTE: 旧的投稿方式
+/*  $sql="INSERT INTO sentence VALUES('$text','$today','$user')";
   $result=mysqli_query($conn,$sql);
   echo $result;
+  */
 }
  // TODO: 查句子
 /*  $sql2="SELECT juzi FROM sentence";
