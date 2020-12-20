@@ -15,6 +15,8 @@ function upload($conn)
   $result=mysqli_query($conn,$sql);
   echo $result;
   */
+  // TODO: 新的审核的投稿方式
+  
 }
  // TODO: 查句子
 /*  $sql2="SELECT juzi FROM sentence";

@@ -133,5 +133,44 @@ $("#reset_bgm").click(function()
   alert("重置背景音乐！")
   $("#bgm").attr("src","https://sound-ks1.cdn.missevan.com/aod/202010/23/8b49d1d92e992adb6fd21b052c8e4769202649.m4a")
 })
-
+// NOTE: bgm循环模式
+function set_bgm_loop_mode()
+{
+  var before="音乐循环模式"
+  var show_mode=$("#show_mode")
+  var btn=$("#bgm_loop_btn")
+  var btn_val=btn.val()
+  console.log("选择值>"+btn_val)
+  if(btn.val()=="0")
+  {
+    //alert("0")
+    show_mode.text(before+"：只播放一次")
+    $("#bgm").attr("loop",false)
+  }
+  if(btn.val()=="1")
+  {
+    //alert("0")
+    show_mode.text(before+"：单曲循环")
+    $("#bgm").attr("loop",true)
+  }
+  if(btn.val()=="2")
+  {
+    //alert("0")
+    show_mode.text(before+"：列表循环（未开发）")
+  }
+  if(btn.val()=="3")
+  {
+    //alert("0")
+    show_mode.text(before+":随机播放")
+  }
+}
+$("#bgm_loop_btn").keyup(function()
+{
+  set_bgm_loop_mode()
+})
+$("#bgm_loop_btn").change(function()
+{
+  //alert("更改了数值！")
+  set_bgm_loop_mode()
+})
 })

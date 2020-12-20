@@ -104,13 +104,15 @@
   <input id="bgm_url" placeholder="请输入音乐直链">
   <button id="change_bgm">更换背景音乐</button>
   <button id="reset_bgm">重置默认背景音乐</button>
+  <input type="number"  min="0" max="3" name="" id="bgm_loop_btn" value="" placeholder="输入数字来设置循环模式">
+  <span id="show_mode">音乐循环模式</span>
   <p id="vol">音量设置:100%</p>
   <input id="vol-set" type="range" value="100">
   <progress value="1" max="100"></progress>
 
 </div>
 
-<audio id="bgm" volume="1" src="https://sound-ks1.cdn.missevan.com/aod/202010/23/8b49d1d92e992adb6fd21b052c8e4769202649.m4a" controls=true>
+<audio id="bgm" loop="true" volume="1"  src="https://sound-ks1.cdn.missevan.com/aod/202010/23/8b49d1d92e992adb6fd21b052c8e4769202649.m4a" controls=true>
 每日一句播放器
 </audio>
 </body>

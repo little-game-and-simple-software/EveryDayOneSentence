@@ -123,3 +123,8 @@ color: white;
   color:green;
   font-color:green;
   }
+/* NOTE: 主页设置音乐播放器循环类型的Input */
+#bgm_loop_btn
+ {
+      width: 15%;
+  }

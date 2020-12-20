@@ -1,15 +1,24 @@
 //设置php的路径模式
-var php_path=set_php_path_mode("internet")
+var php_path=set_php_path_mode("local")
 console.log(php_path)
 $(function()
 {
   //句子被喜欢的次数 初始化
   var likes=0
-  alert("获取今天的句子！")
+//  alert("获取今天的句子！")
   $.get(php_path+"get_today_sentence.php",function(data,status)
   {
     //document.write(data)
     console.log(data)
+    console.log(typeof(data))
+    var s=escape(data)
+    document.write(data)
+    console.log("编码数据_>"+s)
+    for(var i=0;i<data.length;i++)
+    {
+      var   cs=s.charCodeAt(i)
+      console.log("字符code_>"+cs)
+    }
     $(".sentence").text(data)
   })
   //点赞功能
