@@ -98,6 +98,8 @@ $("#logout").click(function()
     $('.button-toysworld:eq(0)').show()
     $('.button-toysworld:eq(1)').show()
 })
+// TODO: 列表循环模式 监听audio播放完成事件，如果完成播放，并且播放列表中有下一首音乐，那就往下播放，否则单曲循环
+// TODO: 切换播放器状态->css 动画 位移类型的伸缩抽屉效果 （懒得做） 反正不擅长写css
 //播放器
 $("#play").click(function()
 {
@@ -161,7 +163,7 @@ function set_bgm_loop_mode()
   if(btn.val()=="3")
   {
     //alert("0")
-    show_mode.text(before+":随机播放")
+    show_mode.text(before+":随机播放(未开发)")
   }
 }
 $("#bgm_loop_btn").keyup(function()
@@ -172,5 +174,18 @@ $("#bgm_loop_btn").change(function()
 {
   //alert("更改了数值！")
   set_bgm_loop_mode()
+})
+$("#bgm_loop_btn").click(function()
+{
+  //alert("输入数字来设置循环模式")
+})
+
+// NOTE: 主页播放器至于网页顶层
+$(".testDiv_border_no_layout").css({"z-index":0,"position":"fixed","bottom":0})
+// NOTE: 显示隐藏播放器
+$("#toggle_audio_player").click(function()
+{
+//  $(".testDiv_border_no_layout").toggle()
+  $(".testDiv_border_no_layout").slideToggle("slow")
 })
 })

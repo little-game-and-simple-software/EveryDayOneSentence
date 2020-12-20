@@ -15,8 +15,11 @@ function upload($conn)
   $result=mysqli_query($conn,$sql);
   echo $result;
   */
-  // TODO: 新的审核的投稿方式
-  
+  // TODO: 新的审核的投稿方式 // NOTE: 首先插入到临时审核表
+  $sql="INSERT INTO checkjuzi VALUES('$text','$today','$user',-1)";
+  mysqli_query($conn,"SET NAMES utf8");
+  $result=mysqli_query($conn,$sql);
+  echo $result;
 }
  // TODO: 查句子
 /*  $sql2="SELECT juzi FROM sentence";

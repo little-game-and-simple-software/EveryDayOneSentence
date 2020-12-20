@@ -1,5 +1,5 @@
 //设置php的路径模式
-var php_path=set_php_path_mode("internet")
+var php_path=set_php_path_mode("local")
 console.log(php_path)
 //投稿代码
 $(function()
@@ -50,6 +50,7 @@ $(function()
           else
           {
             alert("投稿失败")
+            document.write(data)
           }
         })
    }

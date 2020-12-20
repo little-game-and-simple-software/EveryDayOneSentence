@@ -13,9 +13,37 @@
     </style>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="js/core.js">    </script>
     <script>
     $(function()
     {
+      var php_path=set_php_path_mode("local")
+      // NOTE: 获得待审核的数据
+      get_to_check_data()
+      function get_to_check_data()
+      {
+        $.get(php_path+"get_posted_juzi.php",function(data,status)
+        {
+          console.log(status)
+          console.log("返回数据>"+data)
+          console.log("返回数据类型"+typeof(data))
+          var js_data=Array(data)
+          console.log("array强制转换处理后数据类型"+typeof(js_data))
+          console.log(js_data)
+          var result=$.parseJSON(js_data)
+          console.log("最终处理后>")
+          console.log(result)
+          // NOTE: 遍历 设置待审核的li的属性
+          //$("#test").text(result[0].juzi+" "+"日期："+result[0].date+" "+"用户"+result[0].user)
+          for(var i=0;i<result.length;i++)
+          {
+            console.log("执行了"+i+"次")
+            $(".t:eq("+String(i)+")").text(result[i].juzi+" "+"日期："+result[i].date+" "+"用户"+result[i].user)
+          }
+          // TODO: 根据json对象的长度，动态生成li
+        })
+      }
+
       // NOTE: 通过
       $("#pass_btn").click(function()
       {
@@ -30,11 +58,18 @@
         $("#faile_btn").css("background","red")
         // TODO: 从列表中设置不通过的行背景颜色为红色
       })
+      // NOTE: 获取最新待审核的句子
+      $("#get_latest_uncheckd_juzi").click(function()
+      {
+        get_to_check_data()
+
+      })
     })
     </script>
   </head>
   <body>
     <h1 align="center">每日一句审核系统v1 2020/12/19</h1>
+    <center><button id="get_latest_uncheckd_juzi">手动获取最新待审核的句子</button></center>
     <h2>以下是待审核的句子</h2>
     <p>html动态插入li模板</p>
     <code>
@@ -43,9 +78,10 @@
 </code>
     <div>
       <ol>
-        <li>string aaa<button id="pass_btn">可以通过</button><button id="faile_btn">不可以通过</button></li>
-        <li>string aaa<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
-        <li>string aaa<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
+        <li class="t">string aaa<button id="pass_btn">可以通过</button><button id="faile_btn">不可以通过</button></li>
+        <li class="t">string aaa<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
+        <li class="t">NULL<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
+        <li class="t">NULL<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
 
       </ol>
       </div>
