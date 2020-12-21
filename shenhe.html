@@ -38,9 +38,22 @@
           for(var i=0;i<result.length;i++)
           {
             console.log("执行了"+i+"次")
-            $(".t:eq("+String(i)+")").text(result[i].juzi+" "+"日期："+result[i].date+" "+"用户"+result[i].user)
+             // TODO: 根据json对象的长度，动态生成li
+             $("#ol").append("<li class='t'></li>")
+             $(".t:eq("+String(i)+")").text(result[i].juzi+" "+"日期："+result[i].date+" "+"用户"+result[i].user)
+             $(".t:eq("+String(i)+")").append("<button class='pass_btn'>可以通过</button><button class='faile_btn'>不可以通过</button>")
           }
-          // TODO: 根据json对象的长度，动态生成li
+          // NOTE: 两个审核按钮
+          $(".pass_btn").click(function()
+          {
+            $(".pass_btn").css("background","green")
+            alert("可以通过")
+          })
+          $(".faile_btn").click(function()
+          {
+            $(".faile_btn").css("background","red")
+            alert("不可以通过")
+          })
         })
       }
 
@@ -61,8 +74,9 @@
       // NOTE: 获取最新待审核的句子
       $("#get_latest_uncheckd_juzi").click(function()
       {
-        get_to_check_data()
-
+  //      get_to_check_data()
+  // NOTE: 刷新
+  location.reload()
       })
     })
     </script>
@@ -77,12 +91,12 @@
       </xmp>
 </code>
     <div>
-      <ol>
-        <li class="t">string aaa<button id="pass_btn">可以通过</button><button id="faile_btn">不可以通过</button></li>
+      <ol id="ol">
+    <!--    <li class="t">string aaa<button id="pass_btn">可以通过</button><button id="faile_btn">不可以通过</button></li>
         <li class="t">string aaa<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
         <li class="t">NULL<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
         <li class="t">NULL<button id="pass">可以通过</button><button id="faile">不可以通过</button></li>
-
+-->
       </ol>
       </div>
   </body>

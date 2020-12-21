@@ -45,7 +45,7 @@ $(function()
           console.log(data)
           if(data==true)
           {
-            alert("投稿成功")
+            alert("投稿成功，等待审核")
           }
           else
           {
