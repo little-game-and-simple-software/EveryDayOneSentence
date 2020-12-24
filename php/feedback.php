@@ -1,4 +1,6 @@
 <?php
+// NOTE: 自己挖的坑
+// TODO: 这个邮箱发送功能不好做，需要服务器安装了对应的协议和服务组件
 header("Content-Type:text/plain;charset=utf-8");
 #发送邮件至游戏来获取反馈建议
 /*$to = "2439905184@qq.com";         // 邮件接收者

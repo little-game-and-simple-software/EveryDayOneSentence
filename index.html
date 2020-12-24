@@ -3,8 +3,8 @@
 <meta charset="utf-8">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="js/get_web_state.js"></script>
     <script src="js/core.js"></script>
+    <script src="js/get_web_state.js"></script>
     <script src="js/index.js"></script>
 
 <!--JqueryUI-->
@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="js/thirdparty/jquery-ui-1.12.1.custom/jquery-ui.min.css"></link>
 <!--000000000000-->
 <link rel="stylesheet" href="css/index.css">
+<!-- NOTE: 下面两行是废弃代码，但我认为可能还有价值，所以没有删除 -->
 <!--待测试手机适配浏览器的效果-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 -->
@@ -110,6 +111,12 @@
   <p id="show_mode">音乐循环模式</p>
   <p id="vol">音量设置:100%</p>
   <input id="vol-set" type="range" value="100">
+  <!-- NOTE: 这里是自定义播放列表 -->
+  <ol id="bgm_list">
+    <button id="add_custom_bgm">添加自定义曲目到播放列表</button>
+    <li>曲目1 <button>播放</button></li>
+    <li>曲目2 <button>播放</button></li>
+  </ol>
   <progress value="1" max="100"></progress>
   <audio id="bgm" loop="true" volume="1"  src="https://sound-ks1.cdn.missevan.com/aod/202010/23/8b49d1d92e992adb6fd21b052c8e4769202649.m4a" controls=true>
   每日一句播放器

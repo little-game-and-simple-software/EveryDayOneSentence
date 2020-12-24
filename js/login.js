@@ -1,6 +1,6 @@
 var action="" //login或则register注册
 //设置php的路径模式
-var php_path=set_php_path_mode("internet")
+var php_path=auto_set_php()
 console.log(php_path)
 //登录页面
 $(function()

@@ -1,5 +1,5 @@
 //设置php的路径模式
-var php_path=set_php_path_mode("internet")
+var php_path=auto_set_php()
 console.log(php_path)
 //展示公告
 function get_update_information()
@@ -46,7 +46,8 @@ $(document).ready(function()
   //签到
   $(".button-toysworld:eq(4)").click(function()
   {
-    alert("请先登录")
+    //alert("请先登录")
+    alert("看广告，积累积分的功能暂时还没有做")
     window.open("qiandao.html","_self")
   })
   //建议反馈按钮
@@ -187,5 +188,16 @@ $("#toggle_audio_player").click(function()
 {
 //  $(".testDiv_border_no_layout").toggle()
   $(".testDiv_border_no_layout").slideToggle("slow")
+})
+// NOTE: 添加自定义曲目到播放列表
+$("#add_custom_bgm").click(function()
+{
+  var value=prompt("请输入自定义曲目的url直链")
+  if(value)
+  {
+    // TODO: 添加自定义曲目到播放列表
+    alert("已添加")
+    $("#bgm_list").append("<li>测试曲目占位符<button>播放</button></li>")
+  }
 })
 })

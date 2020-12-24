@@ -7,7 +7,46 @@ function error()
 }
 #mysqli_num_rows()返回结果集中行的数量：mysqli_num_rows(result);
 //result type MYSQLI_ASSOC MYSQLI_NUM MYSQLI_BOTH
-function connect_to_db($conn,$servername,$username,$password)
+// NOTE: 链接到数据库的封装的简便方法 place表示是从链接到哪个环境下面的数据库 值:1.local,2.internet
+// NOTE: $db_name数据库名称
+function connect_to_db_quick($place,$db_name)
+{
+  if($place=="local")
+  {
+    $conn = new mysqli("127.0.0.1","root","");
+    if ($conn->connect_error)
+    {
+      echo "连接失败";
+      die("连接失败: " . $conn->connect_error);
+    }
+    else
+    {
+      mysqli_select_db($conn,$db_name);
+      // NOTE: 默认设置编码utf-8防止乱码
+      mysqli_query($conn,"SET NAMES utf8");
+      return $conn;
+    }
+  }
+  if($place=="internet")
+  {
+    $conn = new mysqli("127.0.0.1","5uqswj2525","yDEU7W1rj96p");
+    if ($conn->connect_error)
+    {
+      echo "连接失败";
+      die("连接失败: " . $conn->connect_error);
+    }
+    else
+    {
+      mysqli_select_db($conn,$db_name);
+      // NOTE: 默认设置编码utf-8防止乱码
+      mysqli_query($conn,"SET NAMES utf8");
+      return $conn;
+    }
+  }
+
+}
+// NOTE: 通用性链接到数据库的方法
+function connect_to_db($servername,$username,$password,$db_name)
 {
   $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
@@ -18,6 +57,8 @@ function connect_to_db($conn,$servername,$username,$password)
   else
   {
     mysqli_select_db($conn,"everydayonesentence");
+    // NOTE: 默认设置编码utf-8防止乱码
+    mysqli_query($conn,"SET NAMES utf8");
     return $conn;
   }
 }

@@ -1,4 +1,5 @@
 <?php
+// NOTE: 只是整理乱码的php，在生成环境无实际用途
 $conn="";
 header("Content-Type:text/plain;charset=utf-8");
 connect_to_db();

@@ -1,5 +1,5 @@
 //设置php的路径模式
-var php_path=set_php_path_mode("internet")
+var php_path=auto_set_php()
 console.log(php_path)
 $(function()
 {
@@ -28,7 +28,6 @@ $(function()
     alert("正在获取token？")
     alert("测试账号->"+account)
     alert("测试密码->"+pwd)
-
   })
   $("#change_user_pwd").click(function()
   {
@@ -62,7 +61,7 @@ $(function()
     for(var i=0;i<splited.length;i++)
     {
       console.log("执行了"+i+"次")
-      $("#stn-root").append("<li><a href=''>"+splited[i]+"</a></li>")
+      $("#stn-root").append("<li><a href='userSpace.html'>"+splited[i]+"</a></li>")
     }
     })
   }

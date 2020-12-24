@@ -1,5 +1,5 @@
 //设置php的路径模式
-var php_path=set_php_path_mode("local")
+var php_path=auto_set_php()
 console.log(php_path)
 //投稿代码
 $(function()
@@ -39,7 +39,7 @@ $(function()
     //alert("功能开发中")
     if(cookie_login_state)
     {
-      $.post(php_path+"/upload.php",{text:to_post_text,user:cookie_usr},function(data,status)
+      $.post(php_path+"upload.php",{text:to_post_text,user:cookie_usr},function(data,status)
       {
           //document.write(data)
           console.log(data)

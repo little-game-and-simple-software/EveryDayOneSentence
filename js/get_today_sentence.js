@@ -1,5 +1,5 @@
 //设置php的路径模式
-var php_path=set_php_path_mode("local")
+var php_path=auto_set_php()
 console.log(php_path)
 $(function()
 {
@@ -10,16 +10,18 @@ $(function()
   {
     //document.write(data)
     console.log(data)
-    console.log(typeof(data))
+    $(".sentence").text(data)
+    // NOTE: 测试的代码
+  /*  console.log(typeof(data))
     var s=escape(data)
-    document.write(data)
-    console.log("编码数据_>"+s)
-    for(var i=0;i<data.length;i++)
+  //  document.write(data)
+    console.log("编码数据_>"+s)*/
+  /*  for(var i=0;i<data.length;i++)
     {
       var   cs=s.charCodeAt(i)
       console.log("字符code_>"+cs)
-    }
-    $(".sentence").text(data)
+    }*/
+
   })
   //点赞功能
   $("#like").click(function()
@@ -47,7 +49,7 @@ $(function()
   //上传数据到数据库
   function upload_likes_to_mysql()
   {
-    $.post("upload_likes.php",{},function(data,status)
+    $.post(php_path+"upload_likes.php",{},function(data,status)
     {
 
     })

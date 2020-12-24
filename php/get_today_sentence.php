@@ -1,4 +1,5 @@
 <?php
+include("core.php");
 $conn="";
 //juzi数组
 $juzi=[];

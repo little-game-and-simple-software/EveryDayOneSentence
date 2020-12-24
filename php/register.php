@@ -34,6 +34,7 @@ function get_to_do_action_and_do_action()
 function login($account_name,$pwd,$conn)
 {
   $seletSql="SELECT account,pwd from user";
+  mysqli_query($conn,"SET NAMES utf8");
   $result=mysqli_query($conn,$seletSql);
   if (mysqli_num_rows($result) > 0)
   {
