@@ -184,7 +184,7 @@ $("#bgm_loop_btn").click(function()
 // NOTE: 主页播放器至于网页顶层
 $(".testDiv_border_no_layout").css({"z-index":0,"position":"fixed","bottom":0})
 // NOTE: 显示隐藏播放器
-$("#toggle_audio_player").click(function()
+$(".toggle_audio_player").click(function()
 {
 //  $(".testDiv_border_no_layout").toggle()
   $(".testDiv_border_no_layout").slideToggle("slow")

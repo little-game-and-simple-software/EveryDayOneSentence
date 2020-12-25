@@ -1,0 +1,21 @@
+div
+{
+  display: inline-block;
+  height: 200px;
+}
+#msgType
+{
+  background-color: orange;
+}
+span
+{
+  color:blue;
+//  background-color: yellow;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+}
+#msg_line
+{
+  display: inline-block;
+}

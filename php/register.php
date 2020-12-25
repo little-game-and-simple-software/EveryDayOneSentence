@@ -101,6 +101,7 @@ function connect_to_db()
   }
   else
   {
+    mysqli_query($conn,"SET NAMES utf8");
     mysqli_select_db($conn,"everydayonesentence");
   }
 }

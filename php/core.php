@@ -14,6 +14,7 @@ function connect_to_db_quick($place,$db_name)
   if($place=="local")
   {
     $conn = new mysqli("127.0.0.1","root","");
+    //global $conn;
     if ($conn->connect_error)
     {
       echo "连接失败";
@@ -24,6 +25,8 @@ function connect_to_db_quick($place,$db_name)
       mysqli_select_db($conn,$db_name);
       // NOTE: 默认设置编码utf-8防止乱码
       mysqli_query($conn,"SET NAMES utf8");
+      // NOTE: 返回mysqli对象，到其他的php文件，应该可以使用的，（按照逻辑，怎么会用不了呢)
+      // NOTE: 下次研究一下，先换成之前的方法
       return $conn;
     }
   }
@@ -46,7 +49,7 @@ function connect_to_db_quick($place,$db_name)
 
 }
 // NOTE: 通用性链接到数据库的方法
-function connect_to_db($servername,$username,$password,$db_name)
+function core_connect_to_db($servername,$username,$password,$db_name)
 {
   $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
@@ -56,7 +59,8 @@ function connect_to_db($servername,$username,$password,$db_name)
   }
   else
   {
-    mysqli_select_db($conn,"everydayonesentence");
+    //everydayonesentence
+    mysqli_select_db($conn,$db_name);
     // NOTE: 默认设置编码utf-8防止乱码
     mysqli_query($conn,"SET NAMES utf8");
     return $conn;
