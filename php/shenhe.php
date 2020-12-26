@@ -1,6 +1,5 @@
 <?php
-#header("Content-Type:text/plain;charset=utf-8");
-//include("core.php");
+header("Content-Type:text/html;charset=utf-8");
 // BUG: 下面此方法存在问题，待研究
 #$mysqli=connect_to_db_quick("local","everydayonesentence");
 $sentence=$_POST['juzi'];
@@ -32,7 +31,12 @@ function connect_to_db()
     mysqli_select_db($conn,"everydayonesentence");
   }
 }
-
+function update_juzi_state($conn,$state,$user,$sentence)
+{
+  $sql="UPDATE checkjuzi SET state='$state' WHERE user='$user' AND  juzi='$sentence' ";
+  $result=mysqli_query($conn,$sql);
+  print_r($result);
+}
 // NOTE: 审核通过
 if($status==1)
 {
@@ -40,28 +44,17 @@ if($status==1)
   $sql="INSERT INTO sentence VALUES('$sentence','$today','$user')";
   mysqli_query($conn,"SET NAMES utf8");
   $result=mysqli_query($conn,$sql);
-  var_dump($result);
-//  update_juzi_state(1);
+  #var_dump($result);
+  update_juzi_state($conn,1,$user,$sentence);
   // WARNING: 下面是废弃的
-  /*//var_dump($mysqli);
-  global $mysqli;
-  echo "审核通过";*/
 }
 // NOTE: 改变句子被审核的状态 这是一个通用方法的封装
-function update_juzi_state($state)
-{
-  $sql="UPDATE FROM checkjuzi where user='$user' AND where juzi='$sentence' VALUES('$state') ";
-  $result=mysqli_query($conn,$sql);
-  var_dump($result);
-}
+
 // NOTE: 审核不通过
 if($status==0)
 {
   // TODO: 更新临时待审核表，句子的审核状态
   // NOTE: 语法有点忘记了
-  $sql="UPDATE FROM checkjuzi where user='$user' VALUES($status) ";
-  //  update_juzi_state(1);
-  /*$result=mysqli_query($conn,$sql);
-  var_dump($result);*/
+  update_juzi_state($conn,0,$user,$sentence);
 }
  ?>
