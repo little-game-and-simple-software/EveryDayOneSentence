@@ -41,7 +41,7 @@ function connect_to_db()
   $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
   {
-  echo "连接失败";
+    echo "连接失败";
     die("连接失败: " . $conn->connect_error);
   }
   else

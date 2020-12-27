@@ -5,6 +5,8 @@ $pwd="";
 $action="";
 $conn="";
 header("Content-Type:text/plain;charset=utf-8");
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Methods:POST,GET');
 connect_to_db();
 get_to_do_action_and_do_action();
 
@@ -102,6 +104,7 @@ function connect_to_db()
   else
   {
     mysqli_query($conn,"SET NAMES utf8");
+
     mysqli_select_db($conn,"everydayonesentence");
   }
 }

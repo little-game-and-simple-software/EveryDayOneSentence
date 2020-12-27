@@ -1,5 +1,7 @@
 <?php
-include("core.php");
+//include("core.php");
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Methods:POST,GET');
 $conn="";
 //juzi数组
 $juzi=[];

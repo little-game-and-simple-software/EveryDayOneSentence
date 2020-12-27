@@ -1,17 +1,6 @@
 //核心js
 //设置php路径模式
-// NOTE: 下面这个是废弃的方法
-function set_php_path_mode(mode)
-{
-  if(mode=="local")
-  {
-    return "php/"
-  }
-  if(mode=="internet")
-  {
-    return "Truephp/"
-  }
-}
+
 // NOTE:打印出object对象所有的属性 返回包含object所有属性 的数组
 function Litte_sandbox_pring_obj_all(obj)
 {
@@ -52,3 +41,20 @@ function auto_set_php (){
         alert('未知域名,无法自动设置php路径'+domain)
       }
 }
+// NOTE: 自动解决http混合问题
+function auto_set_http_mix()
+{
+  $("head").append('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">')
+}
+// NOTE: 下面这个是废弃的方法
+/*function set_php_path_mode(mode)
+{
+  if(mode=="local")
+  {
+    return "php/"
+  }
+  if(mode=="internet")
+  {
+    return "Truephp/"
+  }
+}*/
