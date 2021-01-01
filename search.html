@@ -2,7 +2,7 @@
 <html>
   <head>
         <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js/searchCore.js"></script>
+        <script src="js/searchCore.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/index.css">
     <title>每日一句搜索页面(开发中)</title>
@@ -44,6 +44,31 @@
 </a>
 <p>小沙子</p>
 </div>
+
+</div>
+<div class="list_item">
+<h1 align="center">本站所有的句子展示</h1>
+<script src="js/core.js"></script>
+<script>
+$(function()
+{
+//  alert("DA")
+  var php_path=auto_set_php()
+  $.get(php_path+"getAllStn.php",function(data,status)
+  {
+    console.log(status)
+  //  document.write(data)
+    var jsonData=$.parseJSON(data)
+    for(var i=1;i<jsonData.length;i++)
+    {
+    //alert(jsonData[i])
+    // TODO: 把上传者的名字用另外的颜色标注出来，便于网民浏览
+    $(".list_item:eq(2)").append("<p style='border:solid;border-width:2px;border-color:grey'>"+jsonData[i].juzi+">>>>>"+"上传者/创作者:"+jsonData[i].user+"</p>")
+    }
+  })
+
+})
+</script>
 </div>
   </body>
 
