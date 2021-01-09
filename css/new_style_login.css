@@ -29,7 +29,7 @@ html,body {
     font-size: 30px;
     font-family: "Brush Script Std";
 }
-form{
+.content{
     background: url(input-bg.png);
     width: 260px;
     height: 260px;
@@ -60,13 +60,13 @@ ul li .yonghu{
     font-family: iconfont;
     position: absolute;
     top: 12px;
-    left: 10px;
+    left: 2px;
 }
 ul li .mima{
     font-family: iconfont;
     position: absolute;
     top: 12px;
-    left: 10px;
+    left: 2px;
 }
 ul li div input{
     height: 40px;

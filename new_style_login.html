@@ -3,22 +3,28 @@
 <title>每日一句-Login</title>
   <meta charset="UTF-8">
   <!--无效css-->
-      <link href="style.css" rel="stylesheet" type="text/css">
+    <!--  <link href="style.css" rel="stylesheet" type="text/css">-->
       <link rel="stylesheet" href="css/new_style_login.css">
+      <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+      <script src="js/core.js"></script>
+      <script src="js/login.js"></script>
+
 </head>
 <body>
 <div class="wrapper">
     <div class="header">Login to <span>每日一句/小沙盒</span></div>
-    <form action="" method="post">
+<div class="content">
         <ul>
             <li>
                 <div class="text">
-                    <span class="yonghu"></span><input type="text" placeholder="请输入用户名">
+                    <span class="yonghu">用户</span><input type="text" placeholder="请输入用户名" id="account">
                 </div>
             </li>
             <li>
                 <div class="password">
-                    <span class="mima"></span><input type="password" placeholder="请输入密码">
+                    <span class="mima">密码</span><input type="password" placeholder="请输入密码" id="pwd"  />
                 </div>
             </li>
             <li class="remember">
@@ -26,18 +32,17 @@
             </li>
 
             <li>
-                <input type="button" value="登陆">
+                <input type="button" value="登陆" id="Mylogin" >
             </li>
             <li>
-
-                <input type="button" value="注册">
+                <input type="button" value="注册" id="register" >
             </li>
         </ul>
-    </form>
+
     <div class="footer">
         <p>小沙盒工作室  <a href="https://lzr2006.github.io/wkgd/" target="_blank">Copyright 2018-2020 ToysWorld</a></p>
-
     </div>
 </div>
+<a href="login.html" target="_self">旧版登录页面</a>
 </body>
 </html>
