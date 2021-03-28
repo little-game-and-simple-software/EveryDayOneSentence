@@ -9,6 +9,7 @@ function upload($conn)
   $today=date("Y/m/d");
   $text=$_POST['text'];
   $user=$_POST['user'];
+
 // NOTE: 旧的投稿方式
 /*  $sql="INSERT INTO sentence VALUES('$text','$today','$user')";
   $result=mysqli_query($conn,$sql);
@@ -34,8 +35,8 @@ function upload($conn)
 function connect_to_db()
 {
   $servername = "127.0.0.1";
-  $username = "root";
-  $password = "";
+  $username = "5uqswj2525";
+  $password = "yDEU7W1rj96p";
   global $conn;
   $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
@@ -45,6 +46,7 @@ function connect_to_db()
   }
   else
   {
+    mysqli_query($conn,"SET NAMES utf8");
     mysqli_select_db($conn,"everydayonesentence");
   }
 }

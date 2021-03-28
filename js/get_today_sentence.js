@@ -10,18 +10,8 @@ $(function()
   {
     //document.write(data)
     console.log(data)
+    console.log(status)
     $(".sentence").text(data)
-    // NOTE: 测试的代码
-  /*  console.log(typeof(data))
-    var s=escape(data)
-  //  document.write(data)
-    console.log("编码数据_>"+s)*/
-  /*  for(var i=0;i<data.length;i++)
-    {
-      var   cs=s.charCodeAt(i)
-      console.log("字符code_>"+cs)
-    }*/
-
   })
   //点赞功能
   $("#like").click(function()
@@ -56,3 +46,13 @@ $(function()
   }
 
 })
+    // NOTE: 测试的代码
+  /*  console.log(typeof(data))
+    var s=escape(data)
+  //  document.write(data)
+    console.log("编码数据_>"+s)*/
+  /*  for(var i=0;i<data.length;i++)
+    {
+      var   cs=s.charCodeAt(i)
+      console.log("字符code_>"+cs)
+    }*/

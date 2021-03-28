@@ -5,8 +5,8 @@ $pwd="";
 $action="";
 $conn="";
 header("Content-Type:text/plain;charset=utf-8");
-header('Access-Control-Allow-Origin:*');
-header('Access-Control-Allow-Methods:POST,GET');
+header('Access-Control-Allow-Origin:*'); // *代表允许任何网址请求
+header('Access-Control-Allow-Methods:POST,GET,OPTIONS,DELETE'); // 允许请求的类型
 connect_to_db();
 get_to_do_action_and_do_action();
 
@@ -36,7 +36,6 @@ function get_to_do_action_and_do_action()
 function login($account_name,$pwd,$conn)
 {
   $seletSql="SELECT account,pwd from user";
-  mysqli_query($conn,"SET NAMES utf8");
   $result=mysqli_query($conn,$seletSql);
   if (mysqli_num_rows($result) > 0)
   {
@@ -92,8 +91,8 @@ function get_latest_uid($conn)
 function connect_to_db()
 {
   $servername = "127.0.0.1";
-  $username = "s6761292";
-  $password = "wmED04zeWT";
+  $username = "5uqswj2525";
+  $password = "yDEU7W1rj96p";
   global $conn;
   $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
@@ -104,7 +103,7 @@ function connect_to_db()
   else
   {
     mysqli_query($conn,"SET NAMES utf8");
-    mysqli_select_db($conn,"s6761292");
+    mysqli_select_db($conn,"5uqswj2525");
   }
 }
  ?>

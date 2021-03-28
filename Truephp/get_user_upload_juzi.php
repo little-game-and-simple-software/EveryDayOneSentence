@@ -20,8 +20,8 @@ if (mysqli_num_rows($result) > 0)
 function connect_to_db()
 {
   $servername = "127.0.0.1";
-  $username = "s6761292";
-  $password = "wmED04zeWT";
+  $username = "root";
+  $password = "";
   global $conn;
   $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
@@ -31,7 +31,8 @@ function connect_to_db()
   }
   else
   {
-    mysqli_select_db($conn,"s6761292");
+    mysqli_query($conn,"SET NAMES utf8");
+    mysqli_select_db($conn,"everydayonesentence");
   }
 }
  ?>
