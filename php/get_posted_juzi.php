@@ -11,10 +11,12 @@ echo "域名".$host_name;
 #如果域名为127.0.0.1 用本地连接否则用远程连接
 if($host_name=="127.0.0.1")
 {
+  global $conn;
   $conn=connect_to_db_quick("everydayonesentence");
 }
 else
 {
+  global $conn;
   $conn=core_connect_to_db("","","");
 }
 $sql="SELECT * from checkjuzi WHERE state=-1";
