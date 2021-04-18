@@ -1,9 +1,22 @@
 <?php
 header("Content-Type:text/plain;charset=utf-8");
+include("core.php");
 //ob_end_clean();
 // NOTE: 用于审核页面获取用户句子的php 和get_user_upload_juzi.php区分开来
 $conn="";
-connect_to_db();
+// $conn=connect_to_db();
+//首先要链接到数据库
+$host_name=$_SERVER["HTTP_HOST"]; 
+echo "域名".$host_name;
+#如果域名为127.0.0.1 用本地连接否则用远程连接
+if($host_name=="127.0.0.1")
+{
+  $conn=connect_to_db_quick("everydayonesentence");
+}
+else
+{
+  $conn=core_connect_to_db("","","");
+}
 $sql="SELECT * from checkjuzi WHERE state=-1";
 mysqli_query($conn,"SET NAMES utf8");
 $result=mysqli_query($conn,$sql);
@@ -29,24 +42,5 @@ $js_json=json_encode($array);
 echo $js_json;
 //print_r($array);
 //print_r($rows);
-}
-
-//首先要链接到数据库
-function connect_to_db()
-{
-  $servername = "127.0.0.1";
-  $username = "s6761292";
-  $password = "wmED04zeWT";
-  global $conn;
-  $conn = new mysqli($servername,$username,$password);
-  if ($conn->connect_error)
-  {
-    echo "连接失败";
-    die("连接失败: " . $conn->connect_error);
-  }
-  else
-  {
-    mysqli_select_db($conn,"s6761292");
-  }
 }
  ?>

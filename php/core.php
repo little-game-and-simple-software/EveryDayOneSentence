@@ -3,16 +3,14 @@ header("Content-Type:text/plain;charset=utf-8");
 #显示最近的错误
 function error()
 {
-  echo "错误->".mysqli_erroe();
+ // echo "错误->".mysqli_error();
 }
 #mysqli_num_rows()返回结果集中行的数量：mysqli_num_rows(result);
 //result type MYSQLI_ASSOC MYSQLI_NUM MYSQLI_BOTH
-// NOTE: 链接到数据库的封装的简便方法 place表示是从链接到哪个环境下面的数据库 值:1.local,2.internet
+// NOTE: 链接到本地测试数据库的封装的简便方法 
 // NOTE: $db_name数据库名称
-function connect_to_db_quick($place,$db_name)
+function connect_to_db_quick($db_name)
 {
-  if($place=="local")
-  {
     $conn = new mysqli("127.0.0.1","root","");
     //global $conn;
     if ($conn->connect_error)
@@ -24,29 +22,9 @@ function connect_to_db_quick($place,$db_name)
     {
       mysqli_select_db($conn,$db_name);
       // NOTE: 默认设置编码utf-8防止乱码
-      mysqli_query($conn,"SET NAMES utf8");
-      // NOTE: 返回mysqli对象，到其他的php文件，应该可以使用的，（按照逻辑，怎么会用不了呢)
-      // NOTE: 下次研究一下，先换成之前的方法
+      mysqli_query($conn,"SET NAMES utf8");// NOTE: 返回mysqli对象，到其他的php文件，应该可以使用的，（按照逻辑，怎么会用不了呢)
       return $conn;
     }
-  }
-  if($place=="internet")
-  {
-    $conn = new mysqli("127.0.0.1","5uqswj2525","yDEU7W1rj96p");
-    if ($conn->connect_error)
-    {
-      echo "连接失败";
-      die("连接失败: " . $conn->connect_error);
-    }
-    else
-    {
-      mysqli_select_db($conn,$db_name);
-      // NOTE: 默认设置编码utf-8防止乱码
-      mysqli_query($conn,"SET NAMES utf8");
-      return $conn;
-    }
-  }
-
 }
 // NOTE: 通用性链接到数据库的方法
 function core_connect_to_db($servername,$username,$password,$db_name)
@@ -67,7 +45,7 @@ function core_connect_to_db($servername,$username,$password,$db_name)
   }
 }
 // NOTE: 从指定数据表选择指定列 列名 表名 resutType模式 是否显示debug信息 使用何种方法打印测试信息
-function select_data_from_table($conn,$col_name,$table_name,$fetch_mode,$showDebug,$showDebugMode)
+/*function select_data_from_table($conn,$col_name,$table_name,$fetch_mode,$showDebug,$showDebugMode)
 {
   // NOTE: 获取全部 链接 列 表名
   function fetch_all($conn,$col_name,$table_name)
@@ -117,7 +95,7 @@ function select_data_from_table($conn,$col_name,$table_name,$fetch_mode,$showDeb
   }
 
 }
-
+*/
 // NOTE: 打印对象值
 function showlog($obj,$mode)
 {
@@ -134,5 +112,4 @@ function showlog($obj,$mode)
     var_dump($obj);
   }
 }
-
  ?>
