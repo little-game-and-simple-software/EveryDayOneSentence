@@ -31,11 +31,15 @@ function auto_set_php (){
       console.log("外网域名环境")
         return 'Truephp/'
     }
-    //github主页
-    if(domain=="littlegame.opvs.me")
+    if(domain=="")
     {
-    return 'http://'+'everydayonesentence.biu8.top/Truephp/'
+      
     }
+    // //github主页
+    // if(domain=="littlegame.opvs.me")
+    // {
+    // return 'http://'+'everydayonesentence.biu8.top/Truephp/'
+    // }
     else
     {
         alert('未知域名,无法自动设置php路径'+domain)

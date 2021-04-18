@@ -1,6 +1,6 @@
 var action="" //login或则register注册
 //设置php的路径模式
-var php_path=auto_set_php()
+var php_path="../"+auto_set_php()
 console.log(php_path)
 //登录页面
 $(function()
@@ -42,7 +42,7 @@ $(function()
           $.cookie("pwd",value2,{path:'/'})
           alert("登录成功")
           //用户信息保存完成后回到主页
-          window.open("index.html","_self")
+          window.open("../index.html","_self")
         }
         else if(data=="")
         {

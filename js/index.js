@@ -11,13 +11,13 @@ function get_update_information()
 function search()
 {
   alert("具体细节待开发中，按确定键跳转页面")
-  window.open("search.html")
+  window.open("html/search.html")
 }
 //投稿按钮
 function upload()
 {
   //alert("请先登录")
-  window.open("upload.html")
+  window.open("html/upload.html")
 }
 $(document).ready(function()
 {
@@ -41,14 +41,14 @@ $(document).ready(function()
   $(".button-toysworld:eq(2)").click(function()
   {
   //  alert("敬请期待")
-    window.open("showTodaySentence.html","_self")
+    window.open("html/showTodaySentence.html","_self")
   })
   //签到
   $(".button-toysworld:eq(4)").click(function()
   {
     //alert("请先登录")
     alert("看广告，积累积分的功能暂时还没有做")
-    window.open("qiandao.html","_self")
+    window.open("html/qiandao.html","_self")
   })
   //建议反馈按钮
   $(".button-toysworld:eq(8)").click(function()
@@ -72,7 +72,7 @@ $(document).ready(function()
     //如果登录成功 隐藏注册按钮等
     $('.button-toysworld:eq(0)').hide()
     $('.button-toysworld:eq(1)').hide()
-    window.open("userSpace.html")
+    window.open("html/userSpace.html")
   }
     else
     {
