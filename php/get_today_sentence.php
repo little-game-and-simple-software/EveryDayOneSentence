@@ -4,7 +4,7 @@
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods:POST,GET');
 include("auto_login_db.php");
-$conn=auto_login_db();
+$conn=auto_login_db("mryj");
 //juzi数组
 $juzi=[];
 #header("Content-Type:text/plain;charset=utf8");

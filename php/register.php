@@ -9,7 +9,7 @@ include("auto_login_db.php");
 header("Content-Type:text/plain;charset=utf-8");
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods:POST,GET');
-$tmp_db_connect=auto_login_db();
+$tmp_db_connect=auto_login_db("root");
 do_action($_POST['to_action'],$_POST['account'],$_POST['pwd'],$tmp_db_connect);
 // TODO: 新的登录sql语句
 //$sql="SELECT pwd FROM user WHERE account=$_POST \['account']";

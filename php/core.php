@@ -32,7 +32,6 @@ function core_connect_to_db($servername,$username,$password,$db_name)
   $conn = new mysqli($servername,$username,$password);
   if ($conn->connect_error)
   {
-  echo "连接失败";
     die("连接失败: " . $conn->connect_error);
   }
   else
