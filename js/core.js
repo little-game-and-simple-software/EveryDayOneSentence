@@ -26,11 +26,6 @@ function auto_set_php (){
     return 'php/'
     }
     //虚拟主机
-    if(domain=="godotjstest.4uv.top"||domain=="mryj.4uv.top")
-    {
-      console.log("外网域名环境")
-        return 'Truephp/'
-    }
     if(domain=="")
     {
       

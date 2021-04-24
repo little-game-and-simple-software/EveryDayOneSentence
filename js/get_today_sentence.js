@@ -1,5 +1,6 @@
 //设置php的路径模式
-var php_path="../"+auto_set_php()
+//var php_path="../"+auto_set_php()
+var php_path="../php/"
 console.log(php_path)
 $(function()
 {

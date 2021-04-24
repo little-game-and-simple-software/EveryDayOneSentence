@@ -3,11 +3,11 @@
 //本地php
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods:POST,GET');
+include("auto_login_db.php");
+$conn=auto_login_db();
 //juzi数组
 $juzi=[];
 #header("Content-Type:text/plain;charset=utf8");
-//首先要链接到数据库
-$conn=connect_to_db();
 $juzi_array=get_all_juzi($conn);
 $random_value=rand(0,count($juzi_array)-1);
 //echo $random_value;
@@ -24,9 +24,8 @@ function get_all_juzi($connect)
   //print_r($all);
   return $all;
 }
-
-
-function connect_to_db()
+ /*弃用
+ function connect_to_db()
 {
   $servername = "127.0.0.1";
   $username = "root";
@@ -45,4 +44,6 @@ function connect_to_db()
    return $conn;
   }
 }
+ */
  ?>
+ 
