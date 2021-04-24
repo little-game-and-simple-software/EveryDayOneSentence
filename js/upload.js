@@ -49,7 +49,8 @@ $(function()
           }
           else
           {
-            alert("投稿失败")
+            console.warn("投稿失败")
+            //alert("投稿失败")
             document.write(data)
           }
         })

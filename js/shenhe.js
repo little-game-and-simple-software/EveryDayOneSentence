@@ -36,8 +36,6 @@ $(function()
            $(".t:eq("+String(i)+")").append("<button class='pass_btn'>可以通过</button><button class='faile_btn'>不可以通过</button>")
         }
       }
-
-
       // NOTE: 两个审核按钮
     //  $(".pass_btn:eq(0)").click(function()
       $(".pass_btn").click(function()

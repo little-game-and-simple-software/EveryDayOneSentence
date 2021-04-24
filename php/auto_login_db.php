@@ -14,7 +14,8 @@ function auto_login_db($login_type)
     {
         if($login_type=="root")
         {
-            $remote_conn=core_connect_to_db("127.0.0.1","root","10668c6cf29f4c7c","mryi_com");
+            $remote_conn=core_connect_to_db("localhost","root","zr871214","mryi_com");
+            //print_r($remote_conn);
             return $remote_conn;
         }
         if($login_type=="mryj")
@@ -28,4 +29,5 @@ function auto_login_db($login_type)
         echo "未知域名";
     }
 }
+#auto_login_db("root");
 ?>

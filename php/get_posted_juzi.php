@@ -1,30 +1,13 @@
 <?php
 #header("Content-Type:text/plain;charset=utf-8");
-include("core.php");
-//ob_end_clean();
+include("auto_login_db.php");
 // NOTE: 用于审核页面获取用户句子的php 和get_user_upload_juzi.php区分开来
-$conn="";
-// $conn=connect_to_db();
-//首先要链接到数据库
-$host_name=$_SERVER["HTTP_HOST"]; 
-echo "域名".$host_name;
+//$conn="";
+$tmp_db_connect=auto_login_db("mryj");
 #如果域名为127.0.0.1 用本地连接否则用远程连接
-if($host_name=="127.0.0.1")
-{
-  global $conn;
-  $conn=connect_to_db_quick("everydayonesentence");
-  local_get_juzi($conn);
-}
-if($host_name=="mryj.biu8.top")
-{
- // global $conn;
-  $remote_conn=core_connect_to_db("127.0.0.1","mryi_com","Gx2sy8M3YWGsJZwk","mryi_com");
-  //print_r($remote_conn);
-  $conn=$remote_conn;
-  local_get_juzi($remote_conn);
-}
+get_juzi($tmp_db_connect);
 #本地处理方法
-function local_get_juzi($conn)
+function get_juzi($conn)
 {
   $sql="SELECT * from checkjuzi WHERE state=-1";
   mysqli_query($conn,"SET NAMES utf8");
@@ -51,6 +34,6 @@ function local_get_juzi($conn)
   $js_json=json_encode($array);
   echo $js_json;
 }
-print_r($array);
+//print_r($array);
 //print_r($rows);
  ?>
