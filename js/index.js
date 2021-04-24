@@ -146,24 +146,21 @@ function set_bgm_loop_mode()
   console.log("选择值>"+btn_val)
   if(btn.val()=="0")
   {
-    //alert("0")
     show_mode.text(before+"：只播放一次")
     $("#bgm").attr("loop",false)
   }
   if(btn.val()=="1")
   {
-    //alert("0")
     show_mode.text(before+"：单曲循环")
     $("#bgm").attr("loop",true)
   }
   if(btn.val()=="2")
   {
-    //alert("0")
     show_mode.text(before+"：列表循环（未开发）")
   }
   if(btn.val()=="3")
   {
-    //alert("0")
+
     show_mode.text(before+":随机播放(未开发)")
   }
 }

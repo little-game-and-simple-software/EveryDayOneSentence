@@ -17,7 +17,7 @@ $(function()
     }
     else
     {
-      alert("未知状态，异常！！！")
+      console.warn("未知状态，异常！！！")
     }
   })
 })

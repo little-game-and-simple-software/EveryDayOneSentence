@@ -1,55 +1,55 @@
 <?php
 //注册用php
-$account_name="";
+#用户账号 用户密码 行为 数据库链接
+/*$account="";
 $pwd="";
 $action="";
-$conn="";
+$conn="";*/
+include("auto_login_db.php");
 header("Content-Type:text/plain;charset=utf-8");
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods:POST,GET');
-connect_to_db();
-get_to_do_action_and_do_action();
-
+$tmp_db_connect=auto_login_db();
+do_action($_POST['to_action'],$_POST['account'],$_POST['pwd'],$tmp_db_connect);
 // TODO: 新的登录sql语句
 //$sql="SELECT pwd FROM user WHERE account=$_POST \['account']";
 //获得前端发送过来的行为 并根据不同注册或者登录行为选择不同的function
-function get_to_do_action_and_do_action()
+function do_action($action,$account,$pwd,$db_connect)
 {
-  global $account_name;
-  global $pwd;
-  global $action;
-  global $conn;
-  $action=$_POST['to_action'];
-  $account_name=$_POST['account'];
-  $pwd=$_POST['pwd'];
   if($action=="login")
   {
-    login($account_name,$pwd,$conn);
+   // print_r($db_connect);
+    login($account,$pwd,$db_connect);
   }
   if($action=="register")
   {
     // BUG: 注册功能存在小bug
     // FIXME: 已经修复 待测试
-      register($account_name,$pwd,$conn);
+    register($account,$pwd,$db_connect);
   }
 }
-function login($account_name,$pwd,$conn)
+#登录和注册
+function login($account,$pwd,$conn)
 {
-  $seletSql="SELECT account,pwd from user";
+//  $seletSql="SELECT account,pwd from user";
+  $seletSql="SELECT pwd from user WHERE account='$account' ";
   mysqli_query($conn,"SET NAMES utf8");
   $result=mysqli_query($conn,$seletSql);
+  //var_dump($result);
   if (mysqli_num_rows($result) > 0)
-  {
-    // 输出数据
-    while($row = mysqli_fetch_assoc($result))
+  {  // 输出数据
+    $row = mysqli_fetch_assoc($result);
+    //var_dump($row);
+  //  echo $row['pwd'];
+    //验证登录数据
+    if($row['pwd'] == $pwd)
     {
-      //  echo "<br>"."账号->".$row["account"]."<br>密码->".$row["pwd"]."<br>";
-        if($account_name==$row["account"] and $pwd==$row['pwd'])
-         {
-          //$user_array=[];
-          //$user_array.append($account_name);
-          echo true;
-         }
+      echo true;
+    }
+    else
+    { 
+      //echo "密码不正确";
+      echo false;
     }
    }
 }
@@ -81,30 +81,22 @@ function get_latest_uid($conn)
 {
   $sql="SELECT Max(uid) FROM user";
   $pre_result=mysqli_query($conn,$sql);
-  //  echo "<br>";
+  //echo "<br>";
   $latest_uid=mysqli_fetch_array($pre_result);
   $latest_uid_value=$latest_uid[0];
   //新用户
    $newer_uid_value=$latest_uid_value+1;
-  return $newer_uid_value;
+   return $newer_uid_value;
 }
-//首先要链接到数据库
-function connect_to_db()
-{
-  $servername = "127.0.0.1";
-  $username = "s6761292";
-  $password = "wmED04zeWT";
-  global $conn;
-  $conn = new mysqli($servername,$username,$password);
-  if ($conn->connect_error)
-  {
-  echo "连接失败";
-    die("连接失败: " . $conn->connect_error);
-  }
-  else
-  {
-    mysqli_query($conn,"SET NAMES utf8");
-    mysqli_select_db($conn,"s6761292");
-  }
-}
+ //废弃代码
+   /* while($row = mysqli_fetch_assoc($result))
+    {
+      //  echo "<br>"."账号->".$row["account"]."<br>密码->".$row["pwd"]."<br>";
+        if($account==$row["account"] and $pwd==$row['pwd'])
+         {
+          //$user_array=[];
+          //$user_array.append($account_name);
+          echo true;
+         }
+    }*/
  ?>

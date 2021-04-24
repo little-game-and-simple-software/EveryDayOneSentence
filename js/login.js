@@ -1,6 +1,6 @@
 var action="" //login或则register注册
 //设置php的路径模式
-var php_path="../"+auto_set_php()
+var php_path=auto_set_php()
 console.log(php_path)
 //登录页面
 $(function()
@@ -27,8 +27,6 @@ $(function()
     if(value1!='' && value2!='')
     {
       alert("登录中")
-      //php/register.php
-      //"Truephp/register.php"
       $.post(php_path+"register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
       {
         //alert('http->'+status)
@@ -37,6 +35,7 @@ $(function()
         console.log(data)
         if(data)
         {
+          $("body").append(data);
           $.cookie("login","true",{path:'/'})
           $.cookie("account",value1,{path:'/'})
           $.cookie("pwd",value2,{path:'/'})

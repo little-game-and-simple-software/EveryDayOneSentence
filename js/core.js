@@ -19,26 +19,7 @@ function auto_set_php (){
     //获取域名
     var domain = document.domain;
     console.log("域名"+domain)
-    //alert(domain)
-    if(domain=="127.0.0.1")
-     {
-    console.log("本地域名环境")
-    return 'php/'
-    }
-    //虚拟主机
-    if(domain=="")
-    {
-      
-    }
-    // //github主页
-    // if(domain=="littlegame.opvs.me")
-    // {
-    // return 'http://'+'everydayonesentence.biu8.top/Truephp/'
-    // }
-    else
-    {
-        alert('未知域名,无法自动设置php路径'+domain)
-      }
+    return '../php/'
 }
 // NOTE: 自动解决http混合问题
 function auto_set_http_mix()
