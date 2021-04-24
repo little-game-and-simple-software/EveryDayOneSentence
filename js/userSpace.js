@@ -14,7 +14,7 @@ $(function()
   {
     alert("错误，你未登录，没有cookie记录！")
     // TODO: 正式上线 需要添加参数"_self"
-    window.open("index.html","_self")
+    window.open("../index.html","_self")
   }
   get_user_upload_juzi(usr);
   //更换用户头像功能
@@ -46,7 +46,7 @@ $(function()
     $.removeCookie('account',{path:'/'})
     $.removeCookie('pwd',{path:'/'})
     alert("退出登录！")
-    window.open("index.html","_self")
+    window.open("../index.html","_self")
   })
   //NOTE: 获得用户的句子
   function get_user_upload_juzi(usr)

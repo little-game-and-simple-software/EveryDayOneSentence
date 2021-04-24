@@ -1,14 +1,12 @@
 <?php
 //获得用户上传的句子
 header("Content-Type:text/plain;charset=utf-8");
-$conn="";
-connect_to_db();
+include("auto_login_db.php");
+$tmp_db_connect=auto_login_db("mryj");
 $user=$_POST['usr'];
 //echo $user;
-$sql="SELECT juzi FROM sentence WHERE(user='$user')";
-mysqli_query($conn,"SET NAMES utf8");
-
-$result=mysqli_query($conn,$sql);
+$sql="SELECT juzi FROM checkjuzi WHERE(user='$user')";
+$result=mysqli_query($tmp_db_connect,$sql);
 //var_dump($result);
 if (mysqli_num_rows($result) > 0)
 {
@@ -17,21 +15,4 @@ if (mysqli_num_rows($result) > 0)
         echo $row['juzi']."<br>";
       }
   }
-function connect_to_db()
-{
-  $servername = "127.0.0.1";
-  $username = "s6761292";
-  $password = "wmED04zeWT";
-  global $conn;
-  $conn = new mysqli($servername,$username,$password);
-  if ($conn->connect_error)
-  {
-  echo "连接失败";
-    die("连接失败: " . $conn->connect_error);
-  }
-  else
-  {
-    mysqli_select_db($conn,"s6761292");
-  }
-}
  ?>
