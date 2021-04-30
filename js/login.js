@@ -5,10 +5,33 @@ console.log(php_path)
 //登录页面
 $(function()
 {
-  /*$.get("register.php",function(data,status)
+  //在加载时就获取验证信息
+  var question=requestQuestion()
+  console.log("问题>"+question)
+  $("#timu").text("题目:"+question)
+  //进行验证 按钮事件
+  $("#request_verify").click(function()
   {
-    alert(data)
-  })*/
+    var usr_answer=$("#usr_answer").val()
+    console.warn(usr_answer)
+    var verify_result=verify(question,usr_answer)
+    if(verify_result)
+    {
+      console.warn("验证成功")
+    }
+    else
+    {
+      alert("错误，验证失败")
+    }
+  })
+  //更换题目 按钮事件
+  $("#change_question").click(function()
+    {
+    question=requestQuestion()
+    console.log("更换后的问题>"+question)
+    $("#timu").text("题目:"+question)
+   }
+  )
   $("#showPwd").click(function()
   {
     $("#pwd").attr('type','text')

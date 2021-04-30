@@ -8,6 +8,7 @@
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="../js/core.js"></script>
     <script src="../js/login.js"></script>
+    <script src="../js/module/verify.js"></script>
 
 <style >
 #account-waper
@@ -26,6 +27,7 @@
     <p>测试用户：账号666，密码666</p>
     <p style="color:red;font-size:30px;">注意，暂时不提供找回密码服务，请牢记你的密码，或者把它记在本子上面</p>
 <img src="../img/login.png" alt="展示图">
+<br>
 <div id="account-waper">
 
   账号<input id="account" type="text" value="" autocomplete="on" style="ime-mode:disabled"/><br/>
@@ -33,8 +35,17 @@
 </div>
   <button id="showPwd" >显示密码</button>
   <button id="hidePwd">隐藏密码</button>
+  
   <button id="Mylogin" >登录</button>
   <button id="register" >注册</button>
+  <div style="background-color: burlywood;">
+    <p style="color: brown;font-size: large;">请完成人机验证，来验证你不是一个机器人</p>
+    <p id="timu"> 题目：</p>
+    <input id="usr_answer" type="text" placeholder="请输入你的答案">
+    <button id="request_verify">验证</button>  
+    <button id="change_question">更换验证题目</button>
+  </div>
+
   <a href="../index.html">返回主页</a>
   <a href="new_style_login.html">新登录界面（测试中)</a>
 
