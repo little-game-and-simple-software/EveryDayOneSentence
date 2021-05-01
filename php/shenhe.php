@@ -1,5 +1,8 @@
 <?php
 header("Content-Type:text/html;charset=utf-8");
+//php允许跨域访问
+header('Access-Control-Allow-Origin:*'); // *代表允许任何网址请求
+header('Access-Control-Allow-Methods:POST'); // 允许请求的类型
 #自动登录数据库
 include("auto_login_db.php");
 #验证用php

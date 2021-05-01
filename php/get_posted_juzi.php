@@ -1,5 +1,7 @@
 <?php
-#header("Content-Type:text/plain;charset=utf-8");
+//php允许跨域访问
+header('Access-Control-Allow-Origin:*'); // *代表允许任何网址请求
+header('Access-Control-Allow-Methods:POST,GET'); // 允许请求的类型
 include("auto_login_db.php");
 // NOTE: 用于审核页面获取用户句子的php 和get_user_upload_juzi.php区分开来
 //$conn="";
