@@ -1,0 +1,23 @@
+#account-waper
+{
+    /* text-align: center; */
+    margin-left: 25%;
+}
+#Mylogin
+{
+   background-color: aqua;
+   width: 100px;
+}
+#register
+{
+    width: 100px;
+}
+ #account-waper div
+{
+    padding:0px;
+    margin-left: 0px;
+} 
+#verify_human
+{
+    display:none;
+}

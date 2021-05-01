@@ -1,7 +1,12 @@
-var action="" //login或则register注册
+var global_action="" //login或则register注册
 //设置php的路径模式
 var php_path=auto_set_php()
 console.log(php_path)
+//全局变量 验证结果 状态
+var global_verify_result=false
+//全局变量 账号密码
+var global_account
+var global_pwd
 //登录页面
 $(function()
 {
@@ -15,9 +20,13 @@ $(function()
     var usr_answer=$("#usr_answer").val()
     console.warn(usr_answer)
     var verify_result=verify(question,usr_answer)
+    //同步验证结果到全局变量
+    global_verify_result=verify_result
+    //吐过验证成功 立刻执行注册代码post
     if(verify_result)
-    {
+   {
       console.warn("验证成功")
+      register()
     }
     else
     {
@@ -77,16 +86,33 @@ $(function()
         alert("不可以登录")
     }
   })
-//注册
+//注册 点击后弹出注册按钮
 $("#register").click(function()
 {
+  //显示验证div
+  $("#verify_human").show()
+  //注册
   action="register"
   var value1=$("#account").val()
   var value2=$("#pwd").val();
+  //同步信息到全局
+  global_account=value1
+  global_pwd=value2
+  global_action=action
   if(value1!='' && value2!='')
   {
-    alert("注册中")
-    $.post(php_path+"register.php",{to_action:action,account:value1,pwd:value2},function(data,status)
+    alert("请按照要求完成人机身份验证")
+    //
+  }
+  else
+  {
+      alert("不可以注册")
+  }
+})
+//注册代码移动到这里 post部分
+  function register()
+  {
+    $.post(php_path+"register.php",{to_action:global_action,account:global_account,pwd:global_pwd},function(data,status)
     {
       alert('http状态'+status)
       //alert(data)
@@ -103,10 +129,4 @@ $("#register").click(function()
       //alert(data)
     })
   }
-  else
-  {
-      alert("不可以注册")
-  }
-})
-
 })
