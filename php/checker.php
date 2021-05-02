@@ -1,9 +1,10 @@
 <?php
-    $secret_key="fu96diflza";
+    
     //验证身份 审核员登录
     function checker_verify($input_secret_key)
     {
-        if($input_secret_key=="secret_key")
+        $secret_key="fu96diflza";
+        if($input_secret_key==$secret_key)
         {
             return true;
         }
