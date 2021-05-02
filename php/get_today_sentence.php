@@ -17,7 +17,7 @@ echo $final_str;
 get_all_juzi($conn);
 function get_all_juzi($connect)
 {
-  $sql="SELECT juzi FROM checkjuzi";
+  $sql="SELECT juzi FROM checkjuzi WHERE state=1";
   mysqli_query($connect,"SET NAMES utf8");
   $result=mysqli_query($connect,$sql);
   $all=mysqli_fetch_all($result,MYSQLI_NUM);
