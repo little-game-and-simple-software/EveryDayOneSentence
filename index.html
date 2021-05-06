@@ -1,130 +1,137 @@
 <html>
+
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="js/core.js"></script>
     <script src="js/get_web_state.js"></script>
     <script src="js/index.js"></script>
-
-<!--JqueryUI-->
-<script src="js/thirdparty/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="js/thirdparty/jquery-ui-1.12.1.custom/jquery-ui.min.css"></link>
-<!--000000000000-->
-<link rel="stylesheet" href="css/index.css">
-<!-- NOTE: 下面两行是废弃代码，但我认为可能还有价值，所以没有删除 -->
-<!--待测试手机适配浏览器的效果-->
-<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="js/web_count.js"></script>
+    <!--JqueryUI-->
+    <script src="js/thirdparty/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="js/thirdparty/jquery-ui-1.12.1.custom/jquery-ui.min.css"></link>
+    <!--000000000000-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/web_count.css">
+    <!-- NOTE: 下面两行是废弃代码，但我认为可能还有价值，所以没有删除 -->
+    <!--待测试手机适配浏览器的效果-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 -->
-<!--删除无用适配代码↑-->
-<title>每日一句，记录你的美好生活</title>
+    <!--删除无用适配代码↑-->
+    <title>每日一句，记录你的美好生活</title>
 </head>
+
 <body>
-  <!--jQuery easyUI 界面-->
-  <div id="dialog" title="公告">
-  <p>暂时没有公告</p>
-</div>
+    <!--jQuery easyUI 界面-->
+    <div id="dialog" title="公告">
+        <p>暂时没有公告</p>
+    </div>
 
-<div id="imgage">
-  <h1 style="color:aqua;border:3px;"><center>每日一句</center></h1></div><br>
+    <div id="imgage">
+        <h1 style="color:aqua;border:3px;">
+            <center>每日一句</center>
+        </h1>
+    </div><br>
 
-  <img height="40%" width="60%" src="img/login.png" alt="展示图">
-<div id="login">
-  <img width="100px" src="user/favicon.ico" alt="用户头像"/>
-  <a href="html/userSpace.html">
-    <center>
-  状态：未登录
-   </center>
-  </a>
- </div>
-  <div>
+    <img height="40%" width="60%" src="img/login.png" alt="展示图">
+    <div id="login">
+        <img width="100px" src="user/favicon.ico" alt="用户头像" />
+        <a href="html/userSpace.html">
+            <center>
+                状态：未登录
+            </center>
+        </a>
+    </div>
+    <div>
 
-<button id="debug">debug按钮，重新显示登录和注册按钮</button>
-<button id="logout">退出登录</button>
-<input class="toggle_audio_player"  type="checkbox">显示/隐藏自定义播放器</input>
-<br/>
-<!--标题栏1-->
+        <button id="debug">debug按钮，重新显示登录和注册按钮</button>
+        <button id="logout">退出登录</button>
+        <input class="toggle_audio_player" type="checkbox">显示/隐藏自定义播放器</input>
+        <br/>
+        <!--标题栏1-->
 
-<a href="html/login.html" target="_blank" class="button-toysworld">注册</a>
-<a href="html/new_style_login.html" target="_blank" ><button class="button-toysworld">登录</button></a>
-<button class="button-toysworld">获取今日推荐的语句</button>
-<button class="button-toysworld">我</button>
-<button class="button-toysworld">每日签到</button>
-<input type="text" name="" value="" placeholder="请输入关键词来搜索"/>
-<button class="button-toysworld" onclick="search()">搜索</button>
-<button class="button-toysworld" onclick="upload()">投稿</button>
-<button class="button-toysworld" onclick="get_update_information()">公告</button>
-<a href="" class="button-toysworld">建议反馈</a>
-<a href="html/activity.html" target="_blank" class="button-toysworld">活动</a>
-</div>
-<!--标题栏1-->
-<a class="button-toysworld" href="https://www.bilibili.com/video/BV1pv41117ht" target="_blank">关于我们（视频）</a>
-<a href="html/reward.html" target="_blank" class="button-toysworld">积分悬赏任务专区</a>
-<br>
+        <a href="html/login.html" target="_blank" class="button-toysworld">注册</a>
+        <a href="html/new_style_login.html" target="_blank"><button class="button-toysworld">登录</button></a>
+        <button class="button-toysworld">获取今日推荐的语句</button>
+        <button class="button-toysworld">我</button>
+        <button class="button-toysworld">每日签到</button>
+        <input type="text" name="" value="" placeholder="请输入关键词来搜索" />
+        <button class="button-toysworld" onclick="search()">搜索</button>
+        <button class="button-toysworld" onclick="upload()">投稿</button>
+        <button class="button-toysworld" onclick="get_update_information()">公告</button>
+        <a href="" class="button-toysworld">建议反馈</a>
+        <a href="html/activity.html" target="_blank" class="button-toysworld">活动</a>
+    </div>
+    <!--标题栏1-->
+    <a class="button-toysworld" href="https://www.bilibili.com/video/BV1pv41117ht" target="_blank">关于我们（视频）</a>
+    <a href="html/reward.html" target="_blank" class="button-toysworld">积分悬赏任务专区</a>
+    <br>
 
-<b><p>温馨提示:每日签到可以获得一个数字积分，经常签到的人站长会做好贡献荣誉记录。
+    <b><p>温馨提示:每日签到可以获得一个数字积分，经常签到的人站长会做好贡献荣誉记录。
 </p></b>
-<p>点击每日签到，自动跳转至我制作的广告页面或者第三方广告页面。如果是我的广告页面，不存在强制自动下载软件，病毒等不道德的行为，因为站长我也最讨厌这些东西了。
-每天点一下，可以获得积分，然后，我也能靠这个获取一点资金，因为目前是学生，所以做好多事情要钱，购买可靠的虚拟主机要花钱，投放广告要花钱。
-虽然现在可以依靠各种免费的服务，但是免费的服务是不可靠的，有句话说的好，免费的东西反而是最贵的。
+    <p>点击每日签到，自动跳转至我制作的广告页面或者第三方广告页面。如果是我的广告页面，不存在强制自动下载软件，病毒等不道德的行为，因为站长我也最讨厌这些东西了。 每天点一下，可以获得积分，然后，我也能靠这个获取一点资金，因为目前是学生，所以做好多事情要钱，购买可靠的虚拟主机要花钱，投放广告要花钱。 虽然现在可以依靠各种免费的服务，但是免费的服务是不可靠的，有句话说的好，免费的东西反而是最贵的。
 
-</p>
-<hr/>
-<p>做这个网站也是练习一下技术，我是自学的。我主张学以致用，学了要去实践，不然就是背知识而已</p>
-<p>这也是我的兴趣爱好，目前状态，为爱发电</p>
-<hr/>
-<!--详细说明-->
-<p>由于我喜欢的东西多，做的事情也多，所以如果（假设）有用户了，肯定是没有精力审核的，
-  审核系统也没有做过，需要从0开始，没有老师教。
-  最好还是一部分人知道就行，知道的人多了，说的话就会很杂，如果要审核就不好搞了，
-  我还自己做游戏，练习画画，所以精力有限。
-  小众有它的好处，这是个兴趣目的制作的东西，就是这样
-  <hr/>
+    </p>
+    <hr/>
+    <p>做这个网站也是练习一下技术，我是自学的。我主张学以致用，学了要去实践，不然就是背知识而已</p>
+    <p>这也是我的兴趣爱好，目前状态，为爱发电</p>
+    <hr/>
+    <!--详细说明-->
+    <p>由于我喜欢的东西多，做的事情也多，所以如果（假设）有用户了，肯定是没有精力审核的， 审核系统也没有做过，需要从0开始，没有老师教。 最好还是一部分人知道就行，知道的人多了，说的话就会很杂，如果要审核就不好搞了， 我还自己做游戏，练习画画，所以精力有限。 小众有它的好处，这是个兴趣目的制作的东西，就是这样
+        <hr/>
 
-  <b><p>这个东西的想法来源于初中时候的，作业本，老师要求我们每个人每天都要写每日一句，用一句话记录今天的收获和感受
+        <b><p>这个东西的想法来源于初中时候的，作业本，老师要求我们每个人每天都要写每日一句，用一句话记录今天的收获和感受
     ，我只不过把它以网页的形式显示出来.
     后来我一想啊，不是市面上已经有微博，twitter这种同样功能的东西了吗。
     但我还是想做（非商业），网上有人说微博就是粪坑，我也不怎么用，就是用来写一下自己的想法，顺便推广一下而已。
 
   </p>
 </b>
-<hr/>
-<p>有一种游戏类型叫做超休闲游戏，我以后可能也会去尝试一下，因为做起来会比较简单，依靠广告收入。
-  但是，我还是会做人更道德一点，不会写强制自动弹出广告的代码，全是用户自愿的（激励广告），至于一些sdk会不会存在未经开发者许可擅自弹出广告的情况
-  我就不得而知了。</p>
-  <hr/>
-<code>每日一句，记录你的美好生活</code>
-<audio src="audio/place_stone.wav" id="effect">
+        <hr/>
+        <p>有一种游戏类型叫做超休闲游戏，我以后可能也会去尝试一下，因为做起来会比较简单，依靠广告收入。 但是，我还是会做人更道德一点，不会写强制自动弹出广告的代码，全是用户自愿的（激励广告），至于一些sdk会不会存在未经开发者许可擅自弹出广告的情况 我就不得而知了。
+        </p>
+        <hr/>
+        <code>每日一句，记录你的美好生活</code>
+        <audio src="audio/place_stone.wav" id="effect">
 
 </audio>
-<!--每日一句播放器-->
-<div class="testDiv_border_no_layout" style="background:orange;">
-  <p>test456.m4a</p><input class="toggle_audio_player"  type="checkbox">显示/隐藏自定义播放器</input>
+        <!--每日一句播放器-->
+        <div class="testDiv_border_no_layout" style="background:orange;">
+            <p>test456.m4a</p><input class="toggle_audio_player" type="checkbox">显示/隐藏自定义播放器</input>
 
-  <button type="button" name="button">后退</button>
-  <button id="play">播放</button>
-  <button id="pause">暂停</button>
-  <button type="button" name="button">前进</button>
-  <input id="bgm_url" placeholder="请输入音乐直链">
-  <button id="change_bgm">更换背景音乐</button>
-  <button id="reset_bgm">重置默认背景音乐</button>
-  <input type="number"  min="0" max="3" name="" id="bgm_loop_btn" value="" placeholder="输入数字来设置循环模式">
-  <br/><b>输入数字来设置循环模式</b>
-  <p id="show_mode">音乐循环模式</p>
-  <p id="vol">音量设置:100%</p>
-  <input id="vol-set" type="range" value="100">
-  <!-- NOTE: 这里是自定义播放列表 -->
-  <ol id="bgm_list">
-    <button id="add_custom_bgm">添加自定义曲目到播放列表</button>
-    <li>曲目1 <button>播放</button></li>
-    <li>曲目2 <button>播放</button></li>
-  </ol>
-  <progress value="1" max="100"></progress>
-  <audio id="bgm" loop="true" volume="1"  src="https://sound-ks1.cdn.missevan.com/aod/202010/23/8b49d1d92e992adb6fd21b052c8e4769202649.m4a" controls=true>
+            <button type="button" name="button">后退</button>
+            <button id="play">播放</button>
+            <button id="pause">暂停</button>
+            <button type="button" name="button">前进</button>
+            <input id="bgm_url" placeholder="请输入音乐直链">
+            <button id="change_bgm">更换背景音乐</button>
+            <button id="reset_bgm">重置默认背景音乐</button>
+            <input type="number" min="0" max="3" name="" id="bgm_loop_btn" value="" placeholder="输入数字来设置循环模式">
+            <br/><b>输入数字来设置循环模式</b>
+            <p id="show_mode">音乐循环模式</p>
+            <p id="vol">音量设置:100%</p>
+            <input id="vol-set" type="range" value="100">
+            <!-- NOTE: 这里是自定义播放列表 -->
+            <ol id="bgm_list">
+                <button id="add_custom_bgm">添加自定义曲目到播放列表</button>
+                <li>曲目1 <button>播放</button></li>
+                <li>曲目2 <button>播放</button></li>
+            </ol>
+            <progress value="1" max="100"></progress>
+            <audio id="bgm" loop="true" volume="1" src="https://sound-ks1.cdn.missevan.com/aod/202010/23/8b49d1d92e992adb6fd21b052c8e4769202649.m4a" controls=true>
   每日一句播放器
   </audio>
-</div>
-<a href="html/helper.html">网站自愿贡献者荣誉榜</a>
+        </div>
+        <br>
+        <span>网站统计：已收录</span>
+        <span id="count_stns">xxx个句子</span><span>个句子</span>
+        <br/>
+        <span>共有</span>
+        <span id="count_users">xxx个</span>
+        <span>注册用户</span>
+        <a href="html/helper.html">网站自愿贡献者荣誉榜</a>
 
 </body>
+
 </html>
