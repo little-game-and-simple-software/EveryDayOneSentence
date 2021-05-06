@@ -7,8 +7,11 @@ function auto_login_db($login_type)
     #echo "域名".$host_name;
     if($host_name=="127.0.0.1")
     {
-        $conn=connect_to_db_quick("everydayonesentence");
+        if($login_type=="local")
+        {
+        $conn=connect_to_db_quick("mryj");
         return $conn;
+        }
     }
     if($host_name=="mryj.biu8.top")
     {

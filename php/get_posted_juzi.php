@@ -20,7 +20,7 @@ function get_juzi($conn)
   //print_r($row_number);
   if($row_number==0)
   {
-    echo "<p>暂时没有需要审核的句子</p>";
+    echo "暂时没有需要审核的句子";
   }
   else
   {

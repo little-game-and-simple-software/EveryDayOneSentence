@@ -1,10 +1,10 @@
 <?php // NOTE: 核心php
-header("Content-Type:text/plain;charset=utf-8");
+#header("Content-Type:text/plain;charset=utf-8");
 #显示最近的错误
-function error()
+/*function core_error()
 {
  // echo "错误->".mysqli_error();
-}
+}*/
 #mysqli_num_rows()返回结果集中行的数量：mysqli_num_rows(result);
 //result type MYSQLI_ASSOC MYSQLI_NUM MYSQLI_BOTH
 // NOTE: 链接到本地测试数据库的封装的简便方法 
@@ -96,12 +96,8 @@ function core_connect_to_db($servername,$username,$password,$db_name)
 }
 */
 // NOTE: 打印对象值
-function showlog($obj,$mode)
+/*function core_showlog($obj,$mode)
 {
-  if($mode=="" || $pmode=="print")
-  {
-    print($obj);
-  }
   if($mode=="print_r")
   {
     print_r($obj);
@@ -110,5 +106,5 @@ function showlog($obj,$mode)
   {
     var_dump($obj);
   }
-}
+}*/
  ?>
