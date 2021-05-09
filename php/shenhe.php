@@ -33,24 +33,4 @@ function update_juzi_state($conn,$state,$user,$sentence,$input_secret_key)
     var_dump($_POST);
   }
 }
-#暂时废弃代码 在旧的架构中使用
-// NOTE: 审核通过
-/*
-if($status==1)
-{
-  $today=date("Y/m/d");
-  $sql="INSERT INTO sentence VALUES('$sentence','$today','$user')";
-  mysqli_query($conn,"SET NAMES utf8");
-  $result=mysqli_query($conn,$sql);
-  #var_dump($result);
-  update_juzi_state($conn,1,$user,$sentence,$input_secret_key);
-  // WARNING: 下面是废弃的
-}
-// NOTE: 改变句子被审核的状态 这是一个通用方法的封装
-// NOTE: 审核不通过
-if($status==0)
-{
-  // TODO: 更新临时待审核表，句子的审核状态
-  update_juzi_state($conn,0,$user,$sentence,$input_secret_key);
-}*/
  ?>

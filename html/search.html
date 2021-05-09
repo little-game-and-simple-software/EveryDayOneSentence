@@ -36,14 +36,14 @@
     <div class="testDiv">
         <div class="list_item">
             <a href="userSpace.html">
-                <img class="userIcon" src="https://t.52hyjs.com:10086/2020/12/05/1d4bc0260d377.jpg" alt="小沙子">
+                <img class="userIcon" alt="小沙子">
             </a>
             <p>小沙子</p>
         </div>
         <div class="list_item">
             <a href="userSpace.html">
   点击头像跳转到用户界面
-  <img class="userIcon" src="https://t.52hyjs.com:10086/2020/12/05/1d4bc0260d377.jpg" alt="小沙子">
+  <img class="userIcon"  alt="小沙子">
 </a>
             <p>小沙子</p>
         </div>
@@ -55,21 +55,20 @@
 
         </ol>
         <script>
-            $(function() {
-                //  alert("DA")
-                var php_path = auto_set_php()
-                $.get(php_path + "getAllStn.php", function(data, status) {
-                    console.log(status)
-                        //  document.write(data)
-                    var jsonData = $.parseJSON(data)
-                    for (var i = 1; i < jsonData.length; i++) {
-                        //alert(jsonData[i])
-                        // TODO: 把上传者的名字用另外的颜色标注出来，便于网民浏览
-                        $(".list_item:eq(2)").append("<p style='border:solid;border-width:2px;border-color:grey'>" + jsonData[i].juzi + ">>>>>" + "上传者/创作者:" + jsonData[i].user + "</p>")
-                    }
-                })
+            // $(function() {
+            //     var php_path = auto_set_php()
+            //     $.get(php_path + "getAllStn.php", function(data, status) {
+            //         console.log(status)
+            //             //  document.write(data)
+            //         var jsonData = $.parseJSON(data)
+            //         for (var i = 1; i < jsonData.length; i++) {
+            //             //alert(jsonData[i])
+            //             // TODO: 把上传者的名字用另外的颜色标注出来，便于网民浏览
+            //             $(".list_item:eq(2)").append("<p style='border:solid;border-width:2px;border-color:grey'>" + jsonData[i].juzi + ">>>>>" + "上传者/创作者:" + jsonData[i].user + "</p>")
+            //         }
+            //     })
 
-            })
+            // })
         </script>
     </div>
 </body>

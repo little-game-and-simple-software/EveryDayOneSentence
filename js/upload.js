@@ -33,15 +33,15 @@ $(function() {
             // TODO: 投稿功能
             //alert("功能开发中")
         if (cookie_login_state) {
-            $.post(php_path + "upload.php", { text: to_post_text, user: cookie_usr }, function(data, status) {
+            $.post(php_path + "upload.php", { text: to_post_text, user: cookie_usr, db_remote: false }, function(data, status) {
                 //document.write(data)
                 console.log(data)
                 if (data == true) {
                     alert("投稿成功，等待审核")
                 } else {
                     console.warn("投稿失败")
-                        //alert("投稿失败")
-                    document.write(data)
+                    alert("投稿失败")
+                        //document.write(data)
                 }
             })
         } else {

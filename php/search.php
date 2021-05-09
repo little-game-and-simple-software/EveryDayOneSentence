@@ -10,9 +10,16 @@
             $sql="SELECT juzi FROM checkjuzi WHERE state=1";
             mysqli_query($db,"SET NAMES utf8");
             $result=mysqli_query($db,$sql);
+            $array=[];
+            $row_number=mysqli_num_rows($result);
             $all=mysqli_fetch_all($result,MYSQLI_NUM);
-            #var_dump($all);
-            $json=json_encode($all[0]);
+            for($i=0;$i<count($all);$i++)
+            {
+            $tmp_row=$all[$i];
+             array_push($array,$tmp_row);
+           }
+            #print_r($array);
+            $json=json_encode($array);
             echo $json;
         }
     }

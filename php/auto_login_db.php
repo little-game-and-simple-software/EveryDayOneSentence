@@ -4,14 +4,12 @@ include("core.php");
 function auto_login_db($login_type)
 {
     $host_name=$_SERVER["HTTP_HOST"]; 
-    #echo "域名".$host_name;
+    //echo "域名".$host_name;
     if($host_name=="127.0.0.1")
     {
-        if($login_type=="local")
-        {
+        //echo "本地主机";
         $conn=connect_to_db_quick("mryj");
         return $conn;
-        }
     }
     if($host_name=="mryj.biu8.top")
     {
@@ -26,10 +24,6 @@ function auto_login_db($login_type)
             $remote_conn=core_connect_to_db("127.0.0.1","mryi_com","Gx2sy8M3YWGsJZwk","mryi_com");
             return $remote_conn;
         }
-    }
-    else
-    {
-        echo "未知域名";
     }
 }
 #auto_login_db("root");

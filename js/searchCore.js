@@ -5,14 +5,15 @@ $(function() {
     //全部
     var php_path = "../php/"
     $.post(php_path + "search.php", { action: "search_stn" }, function(data, status) {
-            console.log(data)
+            //console.log(data)
+            //document.write(data)
             var json = JSON.parse(data)
             console.log(json)
             console.log(typeof(json))
             for (var i = 0; i < json.length; i++) {
                 $("#stn_list").append("<li>" + json[i] + "</li>")
             }
-            //document.write(data)
+
         })
         //搜索按钮
     $(".button-toysworld:eq(1)").click(function() {
