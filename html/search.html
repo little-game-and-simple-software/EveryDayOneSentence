@@ -26,27 +26,16 @@
     <button type="button" name="button" class="button-toysworld">用户</button>
     <button type="button" name="button" class="button-toysworld">显示全部</button>
     <div class="testDiv">
-        <a class="Sentence" href="showTodaySentence.html">句子1</a>
-        <a class="Sentence" href="showTodaySentence.html">句子1</a>
-        <a class="Sentence" href="showTodaySentence.html">句子1</a>
-        <a class="Sentence" href="showTodaySentence.html">句子1</a>
-        <a class="Sentence" href="showTodaySentence.html">句子1</a>
+        <h2>句子列表</h2>
+        <ol id="result_list_stn">
+        </ol>
     </div>
     <!--用户搜索结果的root节点-->
     <div class="testDiv">
-        <div class="list_item">
-            <a href="userSpace.html">
-                <img class="userIcon" alt="小沙子">
-            </a>
-            <p>小沙子</p>
-        </div>
-        <div class="list_item">
-            <a href="userSpace.html">
-  点击头像跳转到用户界面
-  <img class="userIcon"  alt="小沙子">
-</a>
-            <p>小沙子</p>
-        </div>
+        <h2>用户列表</h2>
+        <ol id="result_list_usr">
+        </ol>
+    </div>
 
     </div>
     <div class="list_item">
@@ -54,22 +43,6 @@
         <ol id="stn_list">
 
         </ol>
-        <script>
-            // $(function() {
-            //     var php_path = auto_set_php()
-            //     $.get(php_path + "getAllStn.php", function(data, status) {
-            //         console.log(status)
-            //             //  document.write(data)
-            //         var jsonData = $.parseJSON(data)
-            //         for (var i = 1; i < jsonData.length; i++) {
-            //             //alert(jsonData[i])
-            //             // TODO: 把上传者的名字用另外的颜色标注出来，便于网民浏览
-            //             $(".list_item:eq(2)").append("<p style='border:solid;border-width:2px;border-color:grey'>" + jsonData[i].juzi + ">>>>>" + "上传者/创作者:" + jsonData[i].user + "</p>")
-            //         }
-            //     })
-
-            // })
-        </script>
     </div>
 </body>
 
