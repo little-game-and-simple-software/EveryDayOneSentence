@@ -157,3 +157,28 @@ button-toysworld:active::before {
 #bgm_loop_btn {
     width: 15%;
 }
+
+#bar {
+    background-color: rgb(148, 189, 202);
+}
+
+#bar a {
+    color: white;
+}
+
+#bar_upload {
+    background-color: #fb7299;
+    padding: 20px;
+    width: 100px;
+    color: white;
+    font-size: x-large;
+}
+
+#bar input {
+    width: 500px;
+    height: 40px;
+}
+
+#bar search {
+    background-image: ;
+}

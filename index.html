@@ -14,6 +14,7 @@
     <!--000000000000-->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/web_count.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <!-- NOTE: 下面两行是废弃代码，但我认为可能还有价值，所以没有删除 -->
     <!--待测试手机适配浏览器的效果-->
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -34,14 +35,29 @@
         </h1>
     </div><br>
 
-    <img height="40%" width="60%" src="img/login.png" alt="展示图">
-    <div id="login">
-        <img width="100px" src="user/favicon.ico" alt="用户头像" />
-        <a href="html/userSpace.html">
-            <center>
-                状态：未登录
-            </center>
-        </a>
+    <img height="40%" width="60%" src="img/login.png" alt="展示图"><br>
+    <div id="bar">
+        <a href="">主站</a>
+        <a href="">下载app</a>
+        <input type="text" name="" value="" placeholder="请输入关键词来搜索" />
+        <button style="font-size:24px">搜索 <i class="fa fa-search"></i></button>
+        <div id="login">
+            <i class="fa fa-user-circle" style="font-size:36px"></i>
+            <a href="html/userSpace.html">
+                <center>
+                    状态：未登录
+                </center>
+            </a>
+
+        </div>
+        <button>消息</button>
+        <a href="">历史</a>
+        <a href="">收藏</a>
+        <a href="html/createCenter.html" target="_blank">创作中心</a>
+        <button id="bar_upload">投稿</button>
+        <button style="font-size:24px">热门 <i class="fa fa-fire"></i></button>
+
+
     </div>
     <div>
 
@@ -56,7 +72,7 @@
         <button class="button-toysworld">获取今日推荐的语句</button>
         <button class="button-toysworld">我</button>
         <button class="button-toysworld">每日签到</button>
-        <input type="text" name="" value="" placeholder="请输入关键词来搜索" />
+
         <button class="button-toysworld" onclick="search()">搜索</button>
         <button class="button-toysworld" onclick="upload()">投稿</button>
         <button class="button-toysworld" onclick="get_update_information()">公告</button>
