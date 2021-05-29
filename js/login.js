@@ -19,7 +19,7 @@ $(function() {
             var verify_result = verify(question, usr_answer)
                 //同步验证结果到全局变量
             global_verify_result = verify_result
-                //吐过验证成功 立刻执行注册代码post
+                //验证成功 立刻执行注册代码post
             if (verify_result) {
                 console.warn("验证成功")
                 register()

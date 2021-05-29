@@ -1,12 +1,5 @@
 <?php // NOTE: 核心php
 #header("Content-Type:text/plain;charset=utf-8");
-#显示最近的错误
-/*function core_error()
-{
- // echo "错误->".mysqli_error();
-}*/
-#mysqli_num_rows()返回结果集中行的数量：mysqli_num_rows(result);
-//result type MYSQLI_ASSOC MYSQLI_NUM MYSQLI_BOTH
 // NOTE: 链接到本地测试数据库的封装的简便方法 
 // NOTE: $db_name数据库名称
 function connect_to_db_quick($db_name)

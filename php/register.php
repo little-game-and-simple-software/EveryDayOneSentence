@@ -57,7 +57,6 @@ function register($account_name,$pwd,$conn)
 {
    $seletSql="SELECT account FROM user WHERE(account='$account_name')";
    $result=mysqli_query($conn,$seletSql);
-   #账号状态
    $account_state="";
    $rows=mysqli_num_rows($result);
    if($rows==0)
