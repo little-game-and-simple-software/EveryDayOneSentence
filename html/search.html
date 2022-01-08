@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../js/core.js"></script>
+    <script src="../js/searchCore.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>每日一句搜索页面(开发中)</title>
+</head>
+
+<body>
+    <a class='button-toysworld' href="../index.html">主站</a>
+    <div align="center" id="searchBar">
+        <h1 style="display:inline">小沙盒搜索</h1>
+        <input id="InputSearch" type="text" name="" value="" placeholder="功能1：请输入关键词搜索，功能2：输入stn加上数字序号，然后点击跳转按钮，即可跳转到对应的句子界面（开发中）">
+        <button name="button" class="button-toysworld">搜索</button>
+        <button name="button" class="button-toysworld">跳转</button>
+    </div>
+    <p>测试数据:["修正",'通用aaa','学生b']</p>
+    <p>我又不想搞搜索功能了，反正网站可以说是根本没人知道，用不着做搜索功能 偷个懒：D 再说了，又不是商业网站
+    </p>
+    <span class="shaixuan">筛选</span>
+    <button type="button" name="button" class="button-toysworld">语句</button>
+    <button type="button" name="button" class="button-toysworld">用户</button>
+    <button type="button" name="button" class="button-toysworld">显示全部</button>
+    <div class="testDiv">
+        <h2>句子列表</h2>
+        <ol id="result_list_stn">
+        </ol>
+    </div>
+    <!--用户搜索结果的root节点-->
+    <div class="testDiv">
+        <h2>用户列表</h2>
+        <ol id="result_list_usr">
+        </ol>
+    </div>
+
+    </div>
+    <div class="list_item">
+        <h1 align="center">本站所有的句子展示</h1>
+        <ol id="stn_list">
+
+        </ol>
+    </div>
+</body>
+
+</html>

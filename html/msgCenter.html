@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>每日一句消息中心</title>
+    <link rel="stylesheet" href="../css/ul.css">
+    <link rel="stylesheet" href="../css/msgCenter.css">
+    <style>
+      li
+      {
+        display:list-item;
+        width:200px;
+        list-style: none;
+        border:solid;
+        border-width: 1px;
+        border-color: black;
+        background-color: white;
+        font-style: italic;
+        color:grey;
+        margin-top: 2px;
+      }
+      ul
+      {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+<ul>
+  <h1>小沙子</h1>
+  <li>系统消息</li>
+  <li>toysworld</li>
+  <li>其他</li>
+</ul>
+<!-- NOTE: 以下只是一个静态页面，功能没做 -->
+<div>
+
+  <h2 id="msgType">系统消息</h2>
+  <!-- WARNING: 不擅长搞这个，要把消息和头像做出单独的一行，而且每行都得是单独的一行 -->
+<!--<p id="msg_line"></p>-->
+
+<img height="15%" src="favicon.jpg" alt="头像">
+<span>这是一句系统消息</span>
+
+<span>这是一句用户消息</span>
+<img height="15%" src="favicon.jpg" alt="头像">
+
+<!-- NOTE: 底部工具条 -->
+<p>
+<input type="text" name="" value="" placeholder="请输入要发送的消息">
+<!-- TODO: 表情包功能 -->
+<button>表情</button>
+<button>发送</button>
+</p>
+</div>
+<a href="../index.html">返回主页</a>
+<!-- TODO: 挖个坑，表情包功能 -->
+<table>
+  <th>收录表情一</th>
+  <th>收录表情二</th>
+<!-- <td>a</td>
+<td>a</td> -->
+</table>
+  </body>
+</html>

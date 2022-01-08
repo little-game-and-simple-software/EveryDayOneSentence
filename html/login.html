@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta charset="utf-8">
+    <title>登录页面</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!-- vue -->
+
+    <script src="../js/core.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/module/verify.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
+
+<style >
+#account-waper
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color:black;
+  text-align:center;
+  display: inline-block;
+}
+</style>
+  </head>
+  <body>
+    <a target="_blank" href="https://easypage.com/0N0K0R0C0T5W7F2H/srxmt2">
+      <img width="200px" alt="小沙盒工作室">
+    </a>
+    <p>测试用户：账号666，密码666</p>
+    <p style="color:red;font-size:30px;">注意，暂时不提供找回密码服务，请牢记你的密码，或者把它记在本子上面</p>
+<center><img src="../img/login.png" alt="展示图"></center>
+<br>
+<div id="account-waper" >
+
+  账号<input id="account" type="text" value="" autocomplete="on" style="ime-mode:disabled"/><br/>
+  密码<input id="pwd" type="password" value="" autocomplete="on" style="ime-mode:disabled">
+  <div>
+  <input type="checkbox">
+  <label for="">记住我</label>
+  </div>
+  <!-- <input type="checkbox"> -->
+  <!-- <label>显示密码</label> -->
+  <button id="Mylogin" >登录</button>
+  <button id="register" >注册</button>
+</div>
+  <!-- <button id="showPwd" >显示密码</button> -->
+  <!-- <button id="hidePwd">隐藏密码</button> -->
+  
+  <div id="verify_human" style="background-color: burlywood;">
+    <p style="color: brown;font-size: large;">请完成人机验证，来验证你不是一个机器人</p>
+    <p id="timu"> 题目：</p>
+    <input id="usr_answer" type="text" placeholder="请输入你的答案">
+    <button id="request_verify">验证</button>  
+    <button id="change_question">更换验证题目</button>
+  </div>
+
+  <a href="../index.html">返回主页</a>
+  <a href="new_style_login.html">新登录界面（测试中)</a>
+
+  <p>我在这个网页中首次使用Jquery,我感觉比原生js写起来更简单</p>
+  <p>返回数据↓</p>
+  <div id="log" style="overflow:auto;height:300px;width:70px;">
+
+  </div>
+</body>
+</html>

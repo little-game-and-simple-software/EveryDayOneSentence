@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <!--<meta charset="utf8mb4_unicode_ci">-->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>今日推荐的句子</title>
+    <style>
+      a{
+        border:1px solid yellow;
+		text-decoration: none;
+	}
+
+		a:hover{
+			background-color: skyblue;
+			color:mediumvioletred;
+			border: 2px double orange;
+			font-size: 25px;
+			font-family: "叶根友行书繁";
+		}
+
+		a:active{
+			background-color: red;
+			color:burlywood;
+		}
+
+		.sentence{
+			color:royalblue;
+			background: #2FBC79;
+			font-size: 40px;
+			text-align: center;
+			font-family: "华文隶书";
+			border: 2px double purple;
+
+		}
+
+		.sentence::selection{
+			color:orange;
+			background: #FFFFFF;
+			font-family:"华文楷体";
+			border: 2px solid #B97E1D;
+		}
+    /*喜欢*/
+    #like,#unlike
+    {
+      font-size: 30px;
+    }
+    </style>
+    <script src="../js/core.js"></script>
+    <script src="../js/get_today_sentence.js"></script>
+  </head>
+  <body>
+<h1 style="text-align:center">今日推荐的每日一句</h1><br><br><br>
+<div class="sentence">这是NUll句子（未获取到值)</div><br><br><br>
+<a href="../index.html" style="display:block;text-align:center">返回到主页</a>
+<center>
+<button id="like">喜欢(红心)</button>
+<button id="unlike">取消喜欢</button>
+</center>
+  </body>
+</html>

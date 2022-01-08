@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日一句创作中心</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        ul {
+            display: inline-block;
+            list-style: none;
+            width: 100px;
+        }
+        
+        li {
+            border: solid 1px;
+            height: 40px;
+            padding: 15px;
+        }
+        
+        table {
+            display: inline-block;
+        }
+    </style>
+    <script>
+        $(function() {
+            // alert("AS")
+            $("#create_rule").click(function() {
+                window.alert("禁止内容：无用灌水，垃圾广告、反动主义言论、诈骗信息等")
+            })
+            var title = {
+                text: '增量数据趋势'
+            };
+            var subtitle = {
+                text: '数据来源：测试'
+            };
+            var xAxis = {
+                categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+            };
+            var yAxis = {
+                title: {
+                    text: '句子浏览量(次数)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            };
+
+            var tooltip = {
+                valueSuffix: '次'
+            }
+
+            var legend = {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            };
+
+            var series = [{
+                name: '道可道，非常道',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
+                    26.5, 23.3, 18.3, 13.9, 9.6
+                ]
+            }, {
+                name: '只要还活着，就不算失败',
+                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
+                    24.1, 20.1, 14.1, 8.6, 2.5
+                ]
+            }, {
+                name: 'linux开源好处多多',
+                data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6,
+                    17.9, 14.3, 9.0, 3.9, 1.0
+                ]
+            }, {
+                name: 'Godot是一个开源的游戏引擎',
+                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0,
+                    16.6, 14.2, 10.3, 6.6, 4.8
+                ]
+            }];
+
+            var json = {};
+
+            json.title = title;
+            json.subtitle = subtitle;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.series = series;
+
+            $("#data_list").highcharts(json);
+        })
+    </script>
+</head>
+
+<body>
+    <div id="bar">
+        <h2>创作中心</h2>
+        <button style="font-size:24px">投稿 <i class="fa fa-upload"></i></button>
+        <button style="font-size:24px">主站 <i class="fa fa-home"></i></button>
+        <span>用户</span><i class="fa fa-user-circle" style="font-size:36px"></i>
+        <button style="font-size:24px">消息 <i class="fa fa-envelope"></i></button>
+    </div>
+    <ul>
+        <li><i class="fa fa-home"></i>首页</li>
+        <li>稿件管理</li>
+        <li>申诉管理</li>
+        <li>数据中心<i class="fa fa-line-chart" style="font-size:24px"></i></li>
+        <li>粉丝管理</li>
+        <details>
+            <summary>互动管理</summary>
+            <p>评论管理</p>
+        </details>
+        <li id="create_rule">创作公约</li>
+        <li>创作设置</li>
+
+    </ul>
+    <table border="1px">
+        <!-- tr是 table row的意思 定义一行 -->
+        <tr>
+            <th>句子数</th>
+            <th>粉丝数</th>
+            <th>评论数</th>
+            <th>分享数</th>
+        </tr>
+        <tr>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+        </tr>
+
+    </table>
+    <ul>热门活动<button style="font-size:24px">更多 <i class="fa fa-caret-square-o-right"></i></button>
+
+        <li>xxxx</li>
+        <li>xxxx</li>
+    </ul>
+    <div id="data_list"></div>
+</body>
+
+</html>
