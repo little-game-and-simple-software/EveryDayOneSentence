@@ -1,9 +1,9 @@
 <?php
 //注册用php
 header("Content-Type:text/html;charset=utf-8");
-$servername = "localhost";
-$username = "xxx";
-$password = "xxx";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $conn = new mysqli($servername, $username, $password);
 
 if ($conn->connect_error) {
@@ -23,5 +23,15 @@ mysqli_select_db($conn,"");
 $seletSql="SELECT account FROM user ";
 $result=mysqli_query($conn,$sql);
 echo $result;
+if($result==$_POST["account"])
+{
+  echo "错误，此账号名已存在"
+}
+else
+{
+    $InterestSql="INTERSET INTO user VALUES($_POST["account"],$_POST["pwd"])"
+    $InterestResult=mysqli_query($coon,"$InterestedSql")
+    echo "成功插入".$InterestResult
+}
 }
  ?>
